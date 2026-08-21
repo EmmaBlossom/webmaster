@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DemoPartners — партнерская программа | ZorNet.Ru</title>
+<style>
+:root{
+  --zn-bg:#f5f6f7;
+  --zn-paper:#fff;
+  --zn-text:#33383f;
+  --zn-muted:#7b838c;
+  --zn-line:#e2e5e9;
+  --zn-line2:#eceef1;
+  --zn-blue:#1786c8;
+  --zn-blue-dark:#0f70ad;
+  --zn-blue-soft:#eef7fc;
+  --zn-green:#2da56f;
+  --zn-yellow:#d89d26;
+  --zn-red:#d9534f;
+  --zn-radius:4px;
+  --zn-shadow:0 1px 2px rgba(24,35,48,.04);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--zn-text);background:var(--zn-bg);font-size:14px;line-height:1.55}
+a{color:var(--zn-blue);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ===== Демонстрационная оболочка ZorNet. На реальном сайте шапка/сайдбар остаются существующими. ===== */
+.zn-topbar{background:#22272d;color:#fff;border-bottom:3px solid var(--zn-blue)}
+.zn-topbar__inner{max-width:1180px;margin:auto;height:58px;display:flex;align-items:center;gap:26px;padding:0 14px}
+.zn-logo{font-size:21px;font-weight:700;letter-spacing:.6px;color:#fff;white-space:nowrap}
+.zn-logo span{color:#51b4ec}
+.zn-nav{display:flex;align-items:center;gap:21px;flex:1}
+.zn-nav a{color:#eef2f5;font-size:13px}
+.zn-auth{color:#cfd7dd;font-size:13px;white-space:nowrap}
+.zn-page{max-width:1180px;margin:18px auto 34px;padding:0 14px;display:grid;grid-template-columns:minmax(0,1fr) 292px;gap:22px;align-items:start}
+.zn-main{min-width:0}
+.zn-sidebar{display:flex;flex-direction:column;gap:14px}
+.zn-sidebox{background:#fff;border:1px solid var(--zn-line);box-shadow:var(--zn-shadow)}
+.zn-sidebox__title{font-weight:700;font-size:14px;padding:11px 13px;border-bottom:1px solid var(--zn-line2);background:#fafbfc}
+.zn-sidebox__body{padding:12px 13px;color:#5f6670}
+.zn-search{display:flex;border:1px solid #d8dde2;background:#fff}
+.zn-search input{border:0;padding:9px 10px;min-width:0;width:100%;outline:0}
+.zn-search button{border:0;background:var(--zn-blue);color:#fff;padding:0 12px;cursor:pointer}
+.zn-cat{list-style:none;padding:0;margin:0}
+.zn-cat li{border-bottom:1px solid #f0f1f3;padding:7px 0}
+.zn-cat li:last-child{border-bottom:0}
+.zn-cat a{font-size:13px}
+.zn-footer{border-top:1px solid #dfe3e7;background:#fff;color:#7b838c;font-size:12px;padding:18px;text-align:center}
+
+/* ===== Материал партнерской программы: все классы изолированы префиксом pp- ===== */
+.pp-wrap{width:100%}
+.pp-breadcrumbs{font-size:12px;color:#8a929a;margin:0 0 12px}
+.pp-breadcrumbs a{color:#6f7881}
+.pp-breadcrumbs span{margin:0 6px;color:#b4bac0}
+.pp-card,.pp-section,.pp-update{background:var(--zn-paper);border:1px solid var(--zn-line);box-shadow:var(--zn-shadow);border-radius:var(--zn-radius)}
+.pp-card{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(250px,.9fr);margin-bottom:14px}
+.pp-hero-main{padding:20px 20px 18px}
+.pp-hero-side{padding:18px;border-left:1px solid var(--zn-line)}
+.pp-brandrow{display:flex;gap:16px;align-items:flex-start}
+.pp-logo{width:96px;height:96px;flex:0 0 96px;border-radius:5px;background:linear-gradient(145deg,#0b273c,#102c52);display:flex;align-items:center;justify-content:center;color:#35d9c8;font-weight:700;font-size:29px;letter-spacing:-2px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.09)}
+.pp-brand{min-width:0}
+.pp-brand h1{margin:0 0 4px;font-size:28px;line-height:1.15;color:#26313b;font-weight:700}
+.pp-meta{color:#63707c;font-size:13px;margin-bottom:7px}
+.pp-meta b{color:#414a53}
+.pp-lead{margin:0;color:#58616b;max-width:600px}
+.pp-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px}
+.pp-stat{border:1px solid var(--zn-line);background:#fbfcfd;padding:12px 11px;min-height:78px;display:flex;align-items:center;gap:10px;min-width:0}
+.pp-stat__ico{width:30px;height:30px;border:1px solid #b9d9ec;color:var(--zn-blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:0 0 30px}
+.pp-stat strong{display:block;font-size:17px;color:#2b3640;line-height:1.2;overflow-wrap:anywhere}
+.pp-stat small{display:block;color:#6e7781;font-size:11px;line-height:1.35;margin-top:2px}
+.pp-cta{display:block;text-align:center;background:var(--zn-blue);color:#fff!important;font-weight:700;font-size:14px;padding:13px 10px;border-radius:3px;margin-bottom:12px;text-transform:uppercase;letter-spacing:.2px;box-shadow:0 2px 4px rgba(23,134,200,.15)}
+.pp-cta:hover{background:var(--zn-blue-dark);text-decoration:none}
+.pp-sideblock{border:1px solid var(--zn-line);margin-top:10px}
+.pp-sideblock h3{font-size:12px;margin:0;padding:9px 10px;background:#fafbfc;border-bottom:1px solid var(--zn-line2)}
+.pp-contact{display:grid;grid-template-columns:74px 1fr;gap:6px 8px;padding:9px 10px;font-size:12px}
+.pp-contact dt{color:#7a838c;margin:0}
+.pp-contact dd{margin:0;color:#414a53;overflow-wrap:anywhere}
+.pp-contact a{font-weight:600}
+.pp-socials{display:flex;flex-wrap:wrap;gap:7px;padding:9px 10px}
+.pp-socials a{border:1px solid #dbe1e5;background:#fff;padding:5px 8px;font-size:11px;color:#56616b}
+.pp-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.pp-tag{background:var(--zn-blue-soft);color:#247cab;border:1px solid #d5eaf6;padding:3px 8px;border-radius:3px;font-size:11px}
+
+.pp-navline{background:#fff;border:1px solid var(--zn-line);padding:9px 13px;margin-bottom:14px;font-weight:700;color:#4f5963}
+.pp-navline span{display:inline-block;border-bottom:2px solid var(--zn-blue);padding:0 2px 5px}
+.pp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:12px}
+.pp-section{padding:14px 15px}
+.pp-section--wide{margin-bottom:12px}
+.pp-section h2{font-size:17px;margin:0;color:#343e47}
+.pp-section h3{font-size:15px;margin:18px 0 7px}
+.pp-acc-trigger{appearance:none;border:0;background:transparent;padding:0;margin:0;width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;color:#343e47;font:inherit;font-size:17px;font-weight:700;cursor:default}
+.pp-acc-icon{display:none;flex:0 0 auto;width:24px;height:24px;border:1px solid #d9e1e7;border-radius:50%;align-items:center;justify-content:center;color:var(--zn-blue);font-size:17px;font-weight:400}
+.pp-acc-panel{margin-top:11px}
+.pp-table{width:100%;border-collapse:collapse;font-size:12px}
+.pp-table th,.pp-table td{padding:7px 6px;border-bottom:1px solid var(--zn-line2);text-align:left;vertical-align:top}
+.pp-table th{font-weight:400;color:#7a838c;width:42%}
+.pp-table tr:last-child td,.pp-table tr:last-child th{border-bottom:0}
+.pp-geo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.pp-geo span{border:1px solid var(--zn-line);padding:6px 8px;background:#fbfcfd;font-size:12px}
+.pp-more{display:inline-block;margin-top:9px;font-size:12px;font-weight:700}
+.pp-note{font-size:11px;color:#727b84;margin-top:11px;padding-top:9px;border-top:1px dashed #dfe3e7}
+.pp-traffic{list-style:none;margin:0;padding:0}
+.pp-traffic li{display:grid;grid-template-columns:1fr auto;gap:10px;padding:6px 0;border-bottom:1px solid var(--zn-line2);font-size:12px}
+.pp-traffic li:last-child{border-bottom:0}
+.pp-status{font-weight:700;font-size:11px;white-space:nowrap}
+.pp-ok{color:var(--zn-green)}.pp-warn{color:var(--zn-yellow)}.pp-no{color:var(--zn-red)}
+.pp-traffic-toggle{display:none;border:1px solid #cddce6;background:#f7fbfd;color:var(--zn-blue);font-weight:700;font-size:12px;padding:8px 10px;width:100%;margin-top:8px;cursor:pointer}
+.pp-paytop{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:9px}
+.pp-kv{border:1px solid var(--zn-line);padding:8px;background:#fbfcfd}
+.pp-kv small{display:block;color:#7c858e;font-size:10px}.pp-kv strong{font-size:13px}
+.pp-models{display:flex;flex-direction:column;gap:7px}
+.pp-model{border:1px solid var(--zn-line);padding:10px 11px;background:#fbfcfd;display:flex;align-items:center;gap:11px}
+.pp-model__badge{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#eef7fc;color:var(--zn-blue);font-weight:700;font-size:12px;flex:0 0 38px}
+.pp-model strong{display:block;font-size:14px}.pp-model span{font-size:11px;color:#69737d}
+.pp-features{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}
+.pp-feature{border:1px solid var(--zn-line);padding:8px;background:#fbfcfd;font-size:12px;display:flex;gap:7px;align-items:center;min-height:38px}
+.pp-feature i{font-style:normal;color:var(--zn-blue);font-weight:700}
+.pp-editorial p{margin:0 0 10px;color:#505962}
+.pp-editorial ul,.pp-editorial ol{margin:7px 0 12px 20px;padding:0}
+.pp-editorial li{margin:4px 0}
+.pp-shot{border:1px solid #d9dde2;background:linear-gradient(180deg,#f8f9fa,#eef1f3);height:210px;margin:12px 0 16px;display:flex;align-items:center;justify-content:center;position:relative;color:#7c858e;font-size:12px;overflow:hidden;cursor:zoom-in}
+.pp-shot:before{content:"";position:absolute;left:18px;right:18px;top:18px;height:23px;border:1px solid #d1d7dc;background:#fff}
+.pp-shot:after{content:"";position:absolute;left:18px;top:53px;width:28%;bottom:18px;border:1px solid #d1d7dc;background:#fff}
+.pp-shot span{position:relative;z-index:2;background:rgba(255,255,255,.9);border:1px solid #d9dde2;padding:6px 9px;text-align:center}
+.pp-steps{counter-reset:step;display:grid;gap:7px;margin:12px 0}
+.pp-step{counter-increment:step;border-left:3px solid #c7e4f4;background:#f9fbfc;padding:9px 10px 9px 39px;position:relative}
+.pp-step:before{content:counter(step);position:absolute;left:10px;top:9px;width:20px;height:20px;border-radius:50%;background:var(--zn-blue);color:#fff;text-align:center;line-height:20px;font-size:11px;font-weight:700}
+
+/* Похожие программы: таблица на десктопе и карточки на мобильном */
+.pp-similar{width:100%;border-collapse:collapse;font-size:12px}
+.pp-similar th{background:#f7f8f9;color:#6f7881;font-weight:700;text-align:left;padding:8px;border-bottom:1px solid var(--zn-line)}
+.pp-similar td{padding:9px 8px;border-bottom:1px solid var(--zn-line2)}
+.pp-similar tr:last-child td{border-bottom:0}
+.pp-prog{display:flex;align-items:center;gap:7px;font-weight:700}
+.pp-mini-logo{width:26px;height:26px;border-radius:3px;background:#26384d;color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px}
+.pp-similar-mobile{display:none;gap:8px}
+.pp-sim-card{border:1px solid var(--zn-line);background:#fbfcfd;padding:11px}
+.pp-sim-card__top{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.pp-sim-card__name{font-weight:700;font-size:13px}
+.pp-sim-card__line{font-size:12px;color:#65707a;margin-top:3px}
+.pp-sim-card__line b{color:#454f58}
+
+
+/* Отзывы пользователей */
+.pp-reviews-section{margin-bottom:12px}
+.pp-reviews-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:12px}
+.pp-reviews-title h2{margin:0 0 3px;font-size:17px;color:#343e47}
+.pp-reviews-title p{margin:0;color:#7a838c;font-size:11px}
+.pp-rating-summary{display:flex;align-items:center;gap:9px;white-space:nowrap}
+.pp-rating-score{font-size:23px;font-weight:700;line-height:1;color:#343e47}
+.pp-stars{color:var(--zn-yellow);letter-spacing:1px;font-size:14px}
+.pp-rating-count{color:#7c858e;font-size:10px;margin-top:2px}
+.pp-review-list{display:grid;gap:8px}
+.pp-review-card{border:1px solid var(--zn-line);background:#fbfcfd;padding:11px 12px}
+.pp-review-card__top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:7px}
+.pp-review-author{display:flex;align-items:center;gap:8px;min-width:0}
+.pp-review-avatar{width:30px;height:30px;border-radius:50%;background:var(--zn-blue-soft);border:1px solid #d7eaf5;color:var(--zn-blue);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex:0 0 30px}
+.pp-review-author b{display:block;font-size:12px;color:#3d4750}
+.pp-review-meta{font-size:10px;color:#899198;margin-top:1px}
+.pp-review-card__rating{font-size:11px;color:var(--zn-yellow);white-space:nowrap}
+.pp-review-card p{font-size:12px;line-height:1.5;color:#525c65;margin:0 0 7px}
+.pp-review-card p:last-child{margin-bottom:0}
+.pp-review-facts{display:flex;flex-wrap:wrap;gap:5px}
+.pp-review-fact{font-size:10px;color:#68737c;background:#fff;border:1px solid var(--zn-line);padding:3px 6px;border-radius:3px}
+.pp-review-fact b{color:#4b555e}
+.pp-review-video{display:inline-flex;align-items:center;gap:5px;color:var(--zn-blue);font-weight:700;font-size:10px}
+
+/* Компактные раскрывающиеся кнопки форм */
+.pp-review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:12px}
+.pp-form-section{padding:0!important;overflow:hidden}
+.pp-form-section .pp-acc-trigger{cursor:pointer!important;padding:10px 12px!important;font-size:13px!important;min-height:42px;color:#46515b;background:#fff}
+.pp-form-section .pp-acc-trigger:hover{background:#fafcfd}
+.pp-form-section .pp-acc-icon{display:flex!important;width:22px;height:22px;font-size:15px}
+.pp-form-section .pp-acc-panel{display:none;margin:0!important;padding:12px 12px 13px;border-top:1px solid var(--zn-line2)}
+.pp-form-section.pp-open .pp-acc-panel{display:block}
+.pp-form-section.pp-open .pp-acc-trigger{color:var(--zn-blue);background:#f9fcfe}
+.pp-form-intro{font-size:11px;color:#68727c;margin:0 0 9px}
+.pp-form{display:grid;gap:8px}
+.pp-form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.pp-field{display:grid;gap:3px}
+.pp-field label,.pp-field legend{font-size:10px;font-weight:700;color:#5c6670}
+.pp-field input,.pp-field select,.pp-field textarea{width:100%;border:1px solid #d7dce1;border-radius:3px;background:#fff;color:#363f47;font:inherit;font-size:11px;padding:8px 9px;outline:none}
+.pp-field textarea{resize:vertical;min-height:74px}
+.pp-field input:focus,.pp-field select:focus,.pp-field textarea:focus{border-color:#8bc2e1;box-shadow:0 0 0 2px rgba(23,134,200,.08)}
+.pp-field small{font-size:9px;color:#8a9299;line-height:1.35}
+.pp-check{display:flex;align-items:flex-start;gap:7px;color:#6a747d;font-size:9px;line-height:1.4}
+.pp-check input{margin-top:2px;flex:0 0 auto}
+.pp-submit{border:0;border-radius:3px;background:#3b8fc1;color:#fff;font-weight:700;font-size:11px;padding:9px 11px;cursor:pointer;text-align:center}
+.pp-submit:hover{background:#287dad}
+.pp-video-tip{display:flex;gap:8px;align-items:flex-start;background:#f7fbfd;border:1px solid #dcebf3;padding:8px 9px;font-size:10px;color:#61707b;margin-bottom:8px}
+.pp-video-tip b{color:#3d596b}
+.pp-video-tip__ico{font-size:16px;line-height:1;color:var(--zn-blue)}
+.pp-form-note{font-size:9px;color:#8b939a;margin-top:1px}
+
+.pp-update{display:flex;justify-content:space-between;gap:14px;padding:10px 12px;color:#68727c;font-size:11px}
+.pp-update strong{color:#4b555f}
+
+/* Lightbox для реальных скриншотов: добавьте class="pp-zoomable" к img в обзоре */
+.pp-lightbox{position:fixed;z-index:99999;inset:0;background:rgba(20,25,30,.86);display:none;align-items:center;justify-content:center;padding:28px}
+.pp-lightbox.pp-visible{display:flex}
+.pp-lightbox img{max-width:min(1200px,96vw);max-height:90vh;background:#fff;box-shadow:0 8px 32px rgba(0,0,0,.35)}
+.pp-lightbox__close{position:absolute;right:18px;top:14px;border:0;background:transparent;color:#fff;font-size:34px;line-height:1;cursor:pointer}
+
+@media(max-width:960px){
+  .zn-page{grid-template-columns:1fr}
+  .zn-sidebar{display:none}
+  .zn-nav{display:none}
+}
+
+/* ===== Мобильная версия по ТЗ: последовательный вертикальный просмотр + аккордеоны ===== */
+@media(max-width:720px){
+  body{font-size:14px}
+  .zn-page{margin-top:10px;padding:0 9px}
+  .pp-breadcrumbs{white-space:nowrap;overflow-x:auto;padding-bottom:2px}
+  .pp-card{grid-template-columns:1fr}
+  .pp-hero-main{padding:14px}
+  .pp-hero-side{padding:14px;border-left:0;border-top:1px solid var(--zn-line)}
+  .pp-brandrow{gap:11px;align-items:center}
+  .pp-logo{width:72px;height:72px;flex-basis:72px;font-size:23px}
+  .pp-brand h1{font-size:23px}
+  .pp-meta{font-size:12px;margin-bottom:4px}
+  .pp-lead{font-size:12px;line-height:1.45}
+  .pp-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:13px}
+  .pp-stat{min-height:70px;padding:9px 8px;gap:7px;align-items:flex-start}
+  .pp-stat__ico{width:26px;height:26px;flex-basis:26px;font-size:9px;margin-top:1px}
+  .pp-stat strong{font-size:14px}
+  .pp-stat small{font-size:10px}
+  .pp-cta{font-size:13px;padding:14px 9px;margin-bottom:10px}
+  .pp-contact{grid-template-columns:80px 1fr;font-size:12px;padding:10px}
+  .pp-socials{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+  .pp-socials a{text-align:center;padding:7px 3px;font-size:10px;overflow:hidden}
+  .pp-tags{margin-top:9px}
+  .pp-navline{margin-bottom:8px;padding:9px 12px}
+  .pp-grid,.pp-review-grid{display:block;margin-bottom:0}
+  .pp-accordion-section{padding:0;margin-bottom:8px;overflow:hidden}
+  .pp-accordion-section .pp-acc-trigger{cursor:pointer;padding:13px 14px;font-size:14px;min-height:48px}
+  .pp-accordion-section .pp-acc-icon{display:flex}
+  .pp-accordion-section .pp-acc-panel{display:none;margin:0;padding:0 14px 14px;border-top:1px solid var(--zn-line2)}
+  .pp-accordion-section.pp-open .pp-acc-panel{display:block}
+  .pp-accordion-section.pp-open .pp-acc-icon{background:var(--zn-blue-soft)}
+  .pp-section--wide{margin-bottom:8px}
+  .pp-table{font-size:12px}
+  .pp-table th,.pp-table td{padding:7px 3px}
+  .pp-geo{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  .pp-geo span{padding:7px 6px}
+  .pp-paytop{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  .pp-kv{padding:8px}
+  .pp-features{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  .pp-feature{padding:8px 7px;font-size:11px;line-height:1.3}
+  .pp-traffic-extra{display:none}
+  .pp-traffic.pp-show-all .pp-traffic-extra{display:grid}
+  .pp-traffic-toggle{display:block}
+  .pp-editorial h3{font-size:15px;margin-top:20px}
+  .pp-editorial p{font-size:13px;line-height:1.6}
+  .pp-shot{height:180px;margin:11px 0 18px;width:100%}
+  .pp-step{font-size:12px;line-height:1.5}
+  .pp-similar{display:none}
+  .pp-similar-mobile{display:grid}
+  .pp-reviews-head{display:block;margin-bottom:10px}
+  .pp-rating-summary{margin-top:7px;justify-content:flex-start}
+  .pp-rating-score{font-size:20px}
+  .pp-review-card{padding:10px}
+  .pp-review-card__top{align-items:flex-start}
+  .pp-review-card__rating{font-size:10px}
+  .pp-review-grid{display:grid;grid-template-columns:1fr;gap:7px;margin-bottom:8px}
+  .pp-form-section .pp-acc-trigger{padding:11px 12px!important;min-height:44px}
+  .pp-form-section .pp-acc-panel{padding:11px 12px 12px}
+  .pp-form-row{grid-template-columns:1fr}
+  .pp-form-intro{margin-top:0}
+  .pp-form .pp-field textarea{min-height:86px}
+  .pp-update{display:block;margin-top:8px;padding:11px 12px}
+  .pp-update a{display:block;margin-top:4px}
+}
+
+@media(max-width:390px){
+  .zn-page{padding:0 6px}
+  .pp-hero-main,.pp-hero-side{padding:12px}
+  .pp-brandrow{align-items:flex-start}
+  .pp-logo{width:62px;height:62px;flex-basis:62px;font-size:20px}
+  .pp-brand h1{font-size:21px}
+  .pp-stats{gap:6px}
+  .pp-stat{padding:8px 7px;min-height:69px}
+  .pp-stat__ico{display:none}
+  .pp-socials{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+</style>
+</head>
+<body class="pp-demo-page">
+<header class="zn-topbar">
+  <div class="zn-topbar__inner">
+    <a class="zn-logo" href="#">ZORNET<span>.RU</span></a>
+    <nav class="zn-nav" aria-label="Основная навигация"><a href="#">Скрипты</a><a href="#">Шаблоны</a><a href="#">Форум</a><a href="#">HTML и CSS</a><a href="#">jQuery</a><a href="#">News</a></nav>
+    <div class="zn-auth">Вход / Регистрация</div>
+  </div>
+</header>
+<div class="zn-page">
+<main class="zn-main">
+<div class="pp-wrap">
+  <div class="pp-breadcrumbs"><a href="#">ZorNet.Ru — сайт для вебмастера</a><span>»</span><a href="#">Партнерские программы</a><span>»</span><a href="#">Gambling</a><span>»</span>DemoPartners</div>
+
+  <section class="pp-card">
+    <div class="pp-hero-main">
+      <div class="pp-brandrow">
+        <div class="pp-logo" aria-label="Логотип DemoPartners">DP</div>
+        <div class="pp-brand">
+          <h1>DemoPartners</h1>
+          <div class="pp-meta"><b>CPA-сеть</b> &nbsp;•&nbsp; Gambling &nbsp;•&nbsp; Betting</div>
+          <p class="pp-lead">Партнерская сеть с офферами в Gambling и Betting. Основные GEO — LATAM и Европа.</p>
+        </div>
+      </div>
+      <div class="pp-stats">
+        <div class="pp-stat"><div class="pp-stat__ico">OF</div><div><strong>450+</strong><small>офферов</small></div></div>
+        <div class="pp-stat"><div class="pp-stat__ico">GEO</div><div><strong>60+</strong><small>доступных GEO</small></div></div>
+        <div class="pp-stat"><div class="pp-stat__ico">%</div><div><strong>CPA / RevShare / Hybrid</strong><small>модели оплаты</small></div></div>
+        <div class="pp-stat"><div class="pp-stat__ico">$</div><div><strong>от $50</strong><small>минимальная выплата</small></div></div>
+        <div class="pp-stat"><div class="pp-stat__ico">7d</div><div><strong>Еженедельно</strong><small>частота выплат</small></div></div>
+        <div class="pp-stat"><div class="pp-stat__ico">H</div><div><strong>7 дней</strong><small>Hold</small></div></div>
+      </div>
+    </div>
+    <aside class="pp-hero-side">
+      <a class="pp-cta" href="#" rel="nofollow sponsored">Официальный сайт партнерской программы ↗</a>
+      <div class="pp-sideblock">
+        <h3>Свяжитесь с менеджерами программы</h3>
+        <dl class="pp-contact">
+          <dt>Telegram</dt><dd><a href="https://t.me/demo_manager" rel="nofollow">@demo_manager</a></dd>
+          <dt>Email</dt><dd><a href="mailto:manager@demopartners.com">manager@demopartners.com</a></dd>
+          <dt>WhatsApp</dt><dd><a href="https://wa.me/447700900123" rel="nofollow">+44 7700 900123</a></dd>
+          <dt>Skype</dt><dd><a href="skype:demo.manager?chat">demo.manager</a></dd>
+        </dl>
+      </div>
+      <div class="pp-sideblock">
+        <h3>Мы в соцсетях</h3>
+        <div class="pp-socials"><a href="#">Telegram</a><a href="#">LinkedIn</a><a href="#">X</a><a href="#">YouTube</a></div>
+      </div>
+      <div class="pp-tags"><span class="pp-tag">Gambling</span><span class="pp-tag">Betting</span></div>
+    </aside>
+  </section>
+
+  <div class="pp-navline"><span>Обзор</span></div>
+
+  <div class="pp-grid">
+    <section class="pp-section pp-accordion-section pp-open" data-pp-accordion>
+  <h2><button class="pp-acc-trigger" type="button" aria-expanded="false"><span>Основная информация</span><span class="pp-acc-icon" aria-hidden="true">+</span></button></h2>
+  <div class="pp-acc-panel">
+<table class="pp-table">
+  <tr><th>Тип</th><td>CPA Network</td></tr>
+  <tr><th>Вертикали</th><td>Gambling, Betting</td></tr>
+  <tr><th>Офферы</th><td>450+</td></tr>
+  <tr><th>Модели оплаты</th><td>CPA, RevShare, Hybrid</td></tr>
+  <tr><th>Ставки</th><td>CPA до $500 / RS до 50%</td></tr>
+  <tr><th>Год запуска</th><td>2020</td></tr>
+  <tr><th>Количество GEO</th><td>60+</td></tr>
+  <tr><th>Языки</th><td>RU / EN</td></tr>
+  <tr><th>Персональный менеджер</th><td>Да</td></tr>
+</table></div>
+</section>
+    <section class="pp-section pp-accordion-section " data-pp-accordion>
+  <h2><button class="pp-acc-trigger" type="button" aria-expanded="false"><span>GEO</span><span class="pp-acc-icon" aria-hidden="true">+</span></button></h2>
+  <div class="pp-acc-panel">
+<div class="pp-geo">
+  <span>🇧🇷 Brazil</span><span>🇲🇽 Mexico</span><span>🇨🇱 Chile</span><span>🇵🇪 Peru</span><span>🇵🇱 Poland</span><span>🇰🇿 Kazakhstan</span>
+</div>
+<a href="#" class="pp-more">+ еще 35 GEO</a>
+<div class="pp-note"><b>Запрещенные GEO:</b> США, Великобритания</div></div>
+</section>
+    <section class="pp-section pp-accordion-section " data-pp-accordion>
+  <h2><button class="pp-acc-trigger" type="button" aria-expanded="false"><span>Источники трафика</span><span class="pp-acc-icon" aria-hidden="true">+</span></button></h2>
+  <div class="pp-acc-panel">
+<ul class="pp-traffic" data-pp-traffic>
+  <li><span>SEO</span><span class="pp-status pp-ok">● Разрешено</span></li>
+  <li><span>Facebook Ads</span><span class="pp-status pp-ok">● Разрешено</span></li>
+  <li><span>TikTok Ads</span><span class="pp-status pp-ok">● Разрешено</span></li>
+  <li><span>Google Ads</span><span class="pp-status pp-ok">● Разрешено</span></li>
+  <li><span>Инфлюенсеры</span><span class="pp-status pp-ok">● Разрешено</span></li>
+  <li class="pp-traffic-extra"><span>Email</span><span class="pp-status pp-warn">▲ По согласованию</span></li>
+  <li class="pp-traffic-extra"><span>Motivated</span><span class="pp-status pp-no">× Запрещено</span></li>
+  <li class="pp-traffic-extra"><span>Incentive</span><span class="pp-status pp-no">× Запрещено</span></li>
+  <li class="pp-traffic-extra"><span>Brand bidding</span><span class="pp-status pp-no">× Запрещено</span></li>
+</ul>
+<button class="pp-traffic-toggle" type="button" data-pp-traffic-toggle>Показать все источники</button></div>
+</section>
+    <section class="pp-section pp-accordion-section " data-pp-accordion>
+  <h2><button class="pp-acc-trigger" type="button" aria-expanded="false"><span>Выплаты</span><span class="pp-acc-icon" aria-hidden="true">+</span></button></h2>
+  <div class="pp-acc-panel">
+<div class="pp-paytop">
+  <div class="pp-kv"><small>Минимальная выплата</small><strong>$50</strong></div>
+  <div class="pp-kv"><small>Частота выплат</small><strong>Еженедельно</strong></div>
+  <div class="pp-kv"><small>Hold</small><strong>7 дней</strong></div>
+  <div class="pp-kv"><small>Способы</small><strong>USDT, Capitalist, Bank</strong></div>
+</div>
+<table class="pp-table">
+  <tr><th>Метод</th><td><b>Минимум</b></td><td><b>Валюта</b></td></tr>
+  <tr><th>USDT (TRC20)</th><td>$50</td><td>USDT</td></tr>
+  <tr><th>Capitalist</th><td>$50</td><td>USD</td></tr>
+  <tr><th>Bank Transfer</th><td>$200</td><td>USD/EUR</td></tr>
+</table></div>
+</section>
+    <section class="pp-section pp-accordion-section " data-pp-accordion>
+  <h2><button class="pp-acc-trigger" type="button" aria-expanded="false"><span>Комиссии и модели оплаты</span><span class="pp-acc-icon" aria-hidden="true">+</span></button></h2>
+  <div class="pp-acc-panel">
+<div class="pp-models">
+  <div class="pp-model"><div class="pp-model__badge">CPA</div><div><strong>CPA</strong><span>до $250 за целевое действие</span></div></div>
+  <div class="pp-model"><div class="pp-model__badge">RS</div><div><strong>RevShare</strong><span>до 50%</span></div></div>
+  <div class="pp-model"><div class="pp-model__badge">HY</div><div><strong>Hybrid</strong><span>индивидуальные условия</span></div></div>
+</div></div>
+</section>
+    <section class="pp-section pp-accordion-section " data-pp-accordion>
+  <h2><button class="pp-acc-trigger" type="button" aria-expanded="false"><span>Дополнительные возможности</span><span class="pp-acc-icon" aria-hidden="true">+</span></button></h2>
+  <div class="pp-acc-panel">
+<div class="pp-features">
+  <div class="pp-feature"><i>✓</i> Smartlink</div><div class="pp-feature"><i>✓</i> API</div>
+  <div class="pp-feature"><i>✓</i> Postback</div><div class="pp-feature"><i>✓</i> Deeplink</div>
+  <div class="pp-feature"><i>✓</i> Промоматериалы</div><div class="pp-feature"><i>✓</i> Эксклюзивные офферы</div>
+  <div class="pp-feature"><i>✓</i> Собственные офферы</div><div class="pp-feature"><i>✓</i> Реферальная программа</div>
+</div></div>
+</section>
+  </div>
+
+  <section class="pp-section pp-accordion-section pp-section--wide" data-pp-accordion>
+  <h2><button class="pp-acc-trigger" type="button" aria-expanded="false"><span>О партнерской программе DemoPartners</span><span class="pp-acc-icon" aria-hidden="true">+</span></button></h2>
+  <div class="pp-acc-panel">
+<div class="pp-editorial">
+  <p><b>DemoPartners</b> — пример страницы CPA-сети, работающей с вертикалями Gambling и Betting. Верхняя часть материала дает короткую сводку условий, а этот раздел предназначен для полноценного обзора: регистрации, кабинета, офферов, ссылок, статистики и выплат.</p>
+  <p>В рабочей версии сюда подставляется редакционный текст по конкретной программе. Если факт не подтвержден источником или самой партнерской программой, поле лучше не выводить.</p>
+  <h3>Как зарегистрироваться</h3>
+  <div class="pp-steps">
+    <div class="pp-step"><b>Перейдите на официальный сайт</b> и откройте форму регистрации вебмастера.</div>
+    <div class="pp-step"><b>Заполните профиль</b>: контакты, опыт, источники трафика и предполагаемые GEO.</div>
+    <div class="pp-step"><b>Дождитесь модерации</b>. При необходимости менеджер запросит дополнительную информацию.</div>
+    <div class="pp-step"><b>После одобрения</b> войдите в кабинет и выберите подходящий оффер.</div>
+  </div>
+  <div class="pp-shot" role="img" aria-label="Место для скриншота формы регистрации"><span>Место для скриншота: форма регистрации<br><small>На мобильном реальное изображение можно увеличить по нажатию</small></span></div>
+  <h3>Кабинет и поиск офферов</h3>
+  <p>В этом блоке обычно описывается структура личного кабинета: каталог офферов, фильтры по GEO и вертикали, карточка оффера, разрешенные источники трафика, ограничения и доступные промоматериалы.</p>
+  <div class="pp-shot" role="img" aria-label="Место для скриншота кабинета"><span>Место для скриншота: каталог офферов / кабинет</span></div>
+  <h3>Получение партнерской ссылки и передача конверсий</h3>
+  <p>После выбора оффера вебмастер получает tracking-ссылку. Если программа поддерживает Postback, API или Deeplink, здесь размещается отдельная пошаговая инструкция с примерами настроек и скриншотами.</p>
+  <ul>
+    <li>выберите оффер и нужное GEO;</li>
+    <li>укажите источник трафика и дополнительные параметры;</li>
+    <li>создайте tracking-ссылку;</li>
+    <li>при необходимости настройте Postback;</li>
+    <li>проверьте поступление кликов и конверсий в статистике.</li>
+  </ul>
+  <div class="pp-shot" role="img" aria-label="Место для скриншота tracking-ссылки"><span>Место для скриншота: создание tracking-ссылки</span></div>
+  <h3>Статистика и выплаты</h3>
+  <p>В конце обзора подробно описываются отчеты, доступные срезы статистики, сроки холда и процедура вывода средств. Для пользователя важно отдельно обозначить минимальную сумму, периодичность выплат, поддерживаемые платежные методы и возможные комиссии.</p>
+  <!-- Реальные скриншоты можно вставлять так: <img src="..." alt="..." class="pp-zoomable"> -->
+</div></div>
+</section>
+
+
+  <section class="pp-section pp-reviews-section">
+    <div class="pp-reviews-head">
+      <div class="pp-reviews-title">
+        <h2>Отзывы о DemoPartners</h2>
+        <p>Опыт вебмастеров, которые уже работали с программой</p>
+      </div>
+      <div class="pp-rating-summary" aria-label="Средняя оценка 4,7 из 5 на основе 12 отзывов">
+        <div class="pp-rating-score">4,7</div>
+        <div><div class="pp-stars">★★★★★</div><div class="pp-rating-count">12 отзывов</div></div>
+      </div>
+    </div>
+
+    <div class="pp-review-list">
+      <article class="pp-review-card">
+        <div class="pp-review-card__top">
+          <div class="pp-review-author"><span class="pp-review-avatar">AK</span><div><b>Алексей К.</b><div class="pp-review-meta">Работает с программой 8 месяцев · 16.08.2026</div></div></div>
+          <div class="pp-review-card__rating" aria-label="5 из 5">★★★★★</div>
+        </div>
+        <p>Хороший выбор офферов по LATAM, менеджер отвечает быстро. Выплаты получал каждую неделю, задержек пока не было. Удобно, что есть Postback и нормальная статистика по GEO.</p>
+        <div class="pp-review-facts"><span class="pp-review-fact"><b>Плюсы:</b> выплаты, менеджер</span><span class="pp-review-fact"><b>Минусы:</b> мало офферов по части GEO</span></div>
+      </article>
+
+      <article class="pp-review-card">
+        <div class="pp-review-card__top">
+          <div class="pp-review-author"><span class="pp-review-avatar">MS</span><div><b>Марина S.</b><div class="pp-review-meta">Работает с программой 4 месяца · 09.08.2026</div></div></div>
+          <div class="pp-review-card__rating" aria-label="4 из 5">★★★★☆</div>
+        </div>
+        <p>Тестировала несколько betting-офферов. Апрув нормальный, по источникам трафика менеджер заранее объяснил ограничения. Хотелось бы больше подробностей по ставкам прямо в каталоге офферов.</p>
+        <div class="pp-review-facts"><span class="pp-review-fact"><b>Плюсы:</b> поддержка, GEO</span><span class="pp-review-fact"><b>Минусы:</b> не везде видны ставки</span></div>
+      </article>
+
+      <article class="pp-review-card">
+        <div class="pp-review-card__top">
+          <div class="pp-review-author"><span class="pp-review-avatar">DV</span><div><b>Дмитрий V.</b><div class="pp-review-meta">Работает с программой больше года · 28.07.2026</div></div></div>
+          <div class="pp-review-card__rating" aria-label="5 из 5">★★★★★</div>
+        </div>
+        <p>Использую Hybrid и RevShare. По крупным объемам условия обсуждаются отдельно, что для меня плюс. Один раз возник вопрос по выплате — менеджер решил его в течение дня.</p>
+        <div class="pp-review-facts"><span class="pp-review-fact"><b>Плюсы:</b> гибкие условия</span><span class="pp-review-video">▶ Есть видеоотзыв</span></div>
+      </article>
+    </div>
+  </section>
+
+  <div class="pp-review-grid">
+    <section class="pp-section pp-accordion-section pp-form-section pp-review-form-section" data-pp-accordion>
+  <h2><button class="pp-acc-trigger" type="button" aria-expanded="false"><span>✎ Оставить отзыв</span><span class="pp-acc-icon" aria-hidden="true">+</span></button></h2>
+  <div class="pp-acc-panel">
+<p class="pp-form-intro">Расскажите о личном опыте работы с DemoPartners. Отзыв можно отправить на модерацию перед публикацией.</p>
+<form class="pp-form" action="#" method="post" data-pp-demo-form="review">
+  <!-- Для рабочего сайта замените action="#" на обработчик uCoz/API. -->
+  <div class="pp-form-row">
+    <div class="pp-field"><label for="pp-review-name">Имя или ник *</label><input id="pp-review-name" name="name" type="text" autocomplete="name" required></div>
+    <div class="pp-field"><label for="pp-review-email">Email *</label><input id="pp-review-email" name="email" type="email" autocomplete="email" required><small>Не публикуется, нужен для модерации.</small></div>
+  </div>
+  <div class="pp-form-row">
+    <div class="pp-field"><label for="pp-review-rating">Оценка *</label><select id="pp-review-rating" name="rating" required><option value="">Выберите</option><option value="5">5 — отлично</option><option value="4">4 — хорошо</option><option value="3">3 — нормально</option><option value="2">2 — плохо</option><option value="1">1 — очень плохо</option></select></div>
+    <div class="pp-field"><label for="pp-review-period">Сколько работали с программой</label><input id="pp-review-period" name="period" type="text" placeholder="Например: 8 месяцев"></div>
+  </div>
+  <div class="pp-form-row">
+    <div class="pp-field"><label for="pp-review-pros">Плюсы</label><textarea id="pp-review-pros" name="pros" rows="4" placeholder="Что понравилось"></textarea></div>
+    <div class="pp-field"><label for="pp-review-cons">Минусы</label><textarea id="pp-review-cons" name="cons" rows="4" placeholder="Что можно улучшить"></textarea></div>
+  </div>
+  <div class="pp-field"><label for="pp-review-text">Ваш отзыв *</label><textarea id="pp-review-text" name="review" rows="6" required placeholder="Опишите выплаты, работу менеджера, офферы, GEO и свой общий опыт"></textarea></div>
+  <label class="pp-check"><input type="checkbox" name="consent" required><span>Я подтверждаю, что отзыв основан на моем опыте, и согласен на его публикацию после модерации.</span></label>
+  <button class="pp-submit" type="submit">Отправить отзыв</button>
+  <div class="pp-form-note">В демо-странице отправка не сохраняет данные. Для публикации форму нужно связать с обработчиком сайта.</div>
+</form></div>
+</section>
+    <section class="pp-section pp-accordion-section pp-form-section pp-review-form-section" data-pp-accordion>
+  <h2><button class="pp-acc-trigger" type="button" aria-expanded="false"><span>▶ Добавить видеоотзыв</span><span class="pp-acc-icon" aria-hidden="true">+</span></button></h2>
+  <div class="pp-acc-panel">
+<div class="pp-video-tip"><span class="pp-video-tip__ico">▶</span><div><b>Как добавить видеоотзыв:</b> загрузите ролик на YouTube, VK Видео или Rutube и вставьте публичную ссылку. Так сайт не хранит тяжелые видеофайлы.</div></div>
+<form class="pp-form" action="#" method="post" data-pp-demo-form="video-review">
+  <!-- Для рабочего сайта замените action="#" на обработчик uCoz/API. -->
+  <div class="pp-form-row">
+    <div class="pp-field"><label for="pp-video-name">Имя или ник *</label><input id="pp-video-name" name="name" type="text" autocomplete="name" required></div>
+    <div class="pp-field"><label for="pp-video-email">Email *</label><input id="pp-video-email" name="email" type="email" autocomplete="email" required><small>Не публикуется.</small></div>
+  </div>
+  <div class="pp-field"><label for="pp-video-url">Ссылка на видео *</label><input id="pp-video-url" name="video_url" type="url" placeholder="https://..." required></div>
+  <div class="pp-field"><label for="pp-video-caption">Короткий комментарий</label><textarea id="pp-video-caption" name="comment" rows="4" placeholder="О чем ваш видеоотзыв и как долго вы работали с программой"></textarea></div>
+  <label class="pp-check"><input type="checkbox" name="rights" required><span>Я подтверждаю, что имею право публиковать это видео и согласен на его размещение после модерации.</span></label>
+  <button class="pp-submit" type="submit">Отправить видеоотзыв</button>
+  <div class="pp-form-note">После подключения backend можно автоматически отправлять ссылку и данные на модерацию.</div>
+</form></div>
+</section>
+  </div>
+
+  <section class="pp-section pp-accordion-section pp-section--wide" data-pp-accordion>
+  <h2><button class="pp-acc-trigger" type="button" aria-expanded="false"><span>Похожие партнерские программы</span><span class="pp-acc-icon" aria-hidden="true">+</span></button></h2>
+  <div class="pp-acc-panel">
+<table class="pp-similar">
+  <thead><tr><th>Программа</th><th>Вертикали</th><th>Основные GEO</th><th>Мин. выплата</th></tr></thead>
+  <tbody>
+    <tr><td><div class="pp-prog"><span class="pp-mini-logo">AP</span><a href="#">AlphaPartners</a></div></td><td>Gambling, Betting</td><td>LATAM, Европа</td><td>$100</td></tr>
+    <tr><td><div class="pp-prog"><span class="pp-mini-logo">BF</span><a href="#">BetFlow</a></div></td><td>Gambling, Betting</td><td>LATAM, Азия</td><td>$50</td></tr>
+    <tr><td><div class="pp-prog"><span class="pp-mini-logo">CG</span><a href="#">ClickGaming</a></div></td><td>Gambling, Betting</td><td>Европа, CIS</td><td>$75</td></tr>
+  </tbody>
+</table>
+<div class="pp-similar-mobile">
+  <article class="pp-sim-card"><div class="pp-sim-card__top"><span class="pp-mini-logo">AP</span><a class="pp-sim-card__name" href="#">AlphaPartners</a></div><div class="pp-sim-card__line">Gambling · Betting</div><div class="pp-sim-card__line"><b>GEO:</b> LATAM · Europe</div><div class="pp-sim-card__line"><b>Минимальная выплата:</b> $100</div></article>
+  <article class="pp-sim-card"><div class="pp-sim-card__top"><span class="pp-mini-logo">BF</span><a class="pp-sim-card__name" href="#">BetFlow</a></div><div class="pp-sim-card__line">Gambling · Betting</div><div class="pp-sim-card__line"><b>GEO:</b> LATAM · Asia</div><div class="pp-sim-card__line"><b>Минимальная выплата:</b> $50</div></article>
+  <article class="pp-sim-card"><div class="pp-sim-card__top"><span class="pp-mini-logo">CG</span><a class="pp-sim-card__name" href="#">ClickGaming</a></div><div class="pp-sim-card__line">Gambling · Betting</div><div class="pp-sim-card__line"><b>GEO:</b> Europe · CIS</div><div class="pp-sim-card__line"><b>Минимальная выплата:</b> $75</div></article>
+</div></div>
+</section>
+
+  <div class="pp-update"><span>Данные обновлены: <strong>19.08.2026</strong></span><a href="#">Нашли ошибку?</a></div>
+
+  <div class="pp-lightbox" data-pp-lightbox aria-hidden="true"><button class="pp-lightbox__close" type="button" aria-label="Закрыть">×</button><img alt="Увеличенный скриншот"></div>
+</div>
+</main>
+<aside class="zn-sidebar">
+  <section class="zn-sidebox"><div class="zn-sidebox__title">Рубрики и разделы сайта</div><div class="zn-sidebox__body"><b>ZorNet.Ru</b> — портал для вебмастера</div></section>
+  <section class="zn-sidebox"><div class="zn-sidebox__body"><form class="zn-search"><input placeholder="Найти на сайте..."><button type="button">Найти</button></form></div></section>
+  <section class="zn-sidebox"><div class="zn-sidebox__title">Ускоренная регистрация</div><div class="zn-sidebox__body"><a href="#">Регистрация / Вход по соц.сети</a></div></section>
+  <section class="zn-sidebox"><div class="zn-sidebox__title">Основные категории сайта</div><div class="zn-sidebox__body"><ul class="zn-cat"><li><a href="#">Вопросы по сайту uCoz</a></li><li><a href="#">Модальные окна Ajax</a></li><li><a href="#">Иконки для форума</a></li><li><a href="#">Графика для сайта</a></li><li><a href="#">Меню и навигация</a></li><li><a href="#">Мини профиль сайта</a></li><li><a href="#">Значки Awesome на CSS</a></li></ul></div></section>
+  <section class="zn-sidebox"><div class="zn-sidebox__title">Случайные материалы</div><div class="zn-sidebox__body"><p><a href="#">Все для Android-телефона</a></p><p><a href="#">Твики и настройка Windows</a></p></div></section>
+  <section class="zn-sidebox"><div class="zn-sidebox__title">Статистика сайта</div><div class="zn-sidebox__body">Зарегистрировались: +0<br>Онлайн всего: 14</div></section>
+</aside>
+</div>
+<footer class="zn-footer">Copyright © 2012–2026 «ZorNet.Ru» — все для вебмастера</footer>
+
+<script>
+(function(){
+  var root=document.querySelector('.pp-wrap');
+  if(!root) return;
+
+  var mobileMq=window.matchMedia('(max-width:720px)');
+  var sections=[].slice.call(root.querySelectorAll('[data-pp-accordion]'));
+
+  function syncAccordions(){
+    sections.forEach(function(section){
+      var btn=section.querySelector('.pp-acc-trigger');
+      var icon=section.querySelector('.pp-acc-icon');
+      if(!btn) return;
+      var isReviewForm=section.classList.contains('pp-review-form-section');
+      if(isReviewForm){
+        var formOpen=section.classList.contains('pp-open');
+        btn.setAttribute('aria-expanded', formOpen ? 'true':'false');
+        if(icon) icon.textContent=formOpen ? '−':'+';
+      }else if(!mobileMq.matches){
+        btn.setAttribute('aria-expanded','true');
+        if(icon) icon.textContent='−';
+      }else{
+        var open=section.classList.contains('pp-open');
+        btn.setAttribute('aria-expanded', open ? 'true':'false');
+        if(icon) icon.textContent=open ? '−':'+';
+      }
+    });
+  }
+
+  sections.forEach(function(section){
+    var btn=section.querySelector('.pp-acc-trigger');
+    if(!btn) return;
+    btn.addEventListener('click',function(){
+      var isReviewForm=section.classList.contains('pp-review-form-section');
+      if(!isReviewForm && !mobileMq.matches) return;
+      section.classList.toggle('pp-open');
+      syncAccordions();
+    });
+  });
+  if(mobileMq.addEventListener) mobileMq.addEventListener('change',syncAccordions);
+  else if(mobileMq.addListener) mobileMq.addListener(syncAccordions);
+  syncAccordions();
+
+  root.querySelectorAll('[data-pp-traffic-toggle]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var panel=btn.closest('.pp-acc-panel');
+      var list=panel && panel.querySelector('[data-pp-traffic]');
+      if(!list) return;
+      var show=list.classList.toggle('pp-show-all');
+      btn.textContent=show ? 'Скрыть дополнительные источники' : 'Показать все источники';
+    });
+  });
+
+  var lightbox=root.querySelector('[data-pp-lightbox]');
+  var lightboxImg=lightbox && lightbox.querySelector('img');
+  function closeLightbox(){
+    if(!lightbox) return;
+    lightbox.classList.remove('pp-visible');
+    lightbox.setAttribute('aria-hidden','true');
+    if(lightboxImg) lightboxImg.removeAttribute('src');
+  }
+  root.querySelectorAll('img.pp-zoomable').forEach(function(img){
+    img.style.cursor='zoom-in';
+    img.addEventListener('click',function(){
+      if(!lightbox || !lightboxImg) return;
+      lightboxImg.src=img.currentSrc || img.src;
+      lightboxImg.alt=img.alt || 'Скриншот';
+      lightbox.classList.add('pp-visible');
+      lightbox.setAttribute('aria-hidden','false');
+    });
+  });
+  if(lightbox){
+    lightbox.addEventListener('click',function(e){ if(e.target===lightbox || e.target.closest('.pp-lightbox__close')) closeLightbox(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeLightbox(); });
+  }
+
+  /* Только для демонстрационного файла. В рабочей версии замените action формы на backend uCoz/API и удалите этот обработчик. */
+  if(document.body.classList.contains('pp-demo-page')){
+    root.querySelectorAll('form[data-pp-demo-form]').forEach(function(form){
+      form.addEventListener('submit',function(e){
+        e.preventDefault();
+        if(!form.reportValidity()) return;
+        var button=form.querySelector('.pp-submit');
+        if(!button) return;
+        var old=button.textContent;
+        button.textContent='Готово — отправлено на модерацию';
+        button.disabled=true;
+        setTimeout(function(){ button.textContent=old; button.disabled=false; },2600);
+      });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
