@@ -1,0 +1,46 @@
+name: Fix language links
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Replace GitHub Pages language URL placeholders
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          ru_url = 'https://emmablossom.github.io/webmaster/'
+          en_url = 'https://emmablossom.github.io/webmaster/en/'
+
+          for filename in ('index.html', 'en/index.html'):
+              path = Path(filename)
+              text = path.read_text(encoding='utf-8')
+              text = text.replace('{{RU_PAGE_URL}}', ru_url)
+              text = text.replace('{{EN_PAGE_URL}}', en_url)
+              path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Commit changes if needed
+        run: |
+          if git diff --quiet; then
+            echo "No placeholders left to replace."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html en/index.html
+          git commit -m "Fix GitHub Pages language links"
+          git push
