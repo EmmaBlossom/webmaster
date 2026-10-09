@@ -346,6 +346,7 @@
 }
 </script>
 <!-- /Schema.org JSON-LD -->
+<style>.pp-text-heading{font-weight:700}.pp-text-h2{font-size:1.5em;margin-block:0.83em}.pp-text-h3{font-size:1.17em;margin-block:1em}</style>
 <style>
 :root{
   --zn-bg:#f5f6f7;
@@ -403,7 +404,7 @@ a:hover{text-decoration:underline}
 .pp-brandrow{display:flex;gap:16px;align-items:flex-start}
 .pp-logo{width:96px;height:96px;flex:0 0 96px;border-radius:5px;background:linear-gradient(145deg,#0b273c,#102c52);display:flex;align-items:center;justify-content:center;color:#35d9c8;font-weight:700;font-size:29px;letter-spacing:-2px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.09)}
 .pp-brand{min-width:0}
-.pp-brand h1{margin:0 0 4px;font-size:28px;line-height:1.15;color:#26313b;font-weight:700}
+.pp-brand :is(h1,.pp-text-h1){margin:0 0 4px;font-size:28px;line-height:1.15;color:#26313b;font-weight:700}
 .pp-meta{color:#63707c;font-size:13px;margin-bottom:7px}
 .pp-meta b{color:#414a53}
 .pp-lead{margin:0;color:#58616b;max-width:600px}
@@ -415,7 +416,7 @@ a:hover{text-decoration:underline}
 .pp-cta{display:block;text-align:center;background:var(--zn-blue);color:#fff!important;font-weight:700;font-size:14px;padding:13px 10px;border-radius:3px;margin-bottom:12px;text-transform:uppercase;letter-spacing:.2px;box-shadow:0 2px 4px rgba(23,134,200,.15)}
 .pp-cta:hover{background:var(--zn-blue-dark);text-decoration:none}
 .pp-sideblock{border:1px solid var(--zn-line);margin-top:10px}
-.pp-sideblock h3{font-size:13px;margin:0;padding:9px 10px;background:#fafbfc;border-bottom:1px solid var(--zn-line2)}
+.pp-sideblock :is(h3,.pp-text-h3){font-size:13px;margin:0;padding:9px 10px;background:#fafbfc;border-bottom:1px solid var(--zn-line2)}
 .pp-contact{display:grid;grid-template-columns:74px 1fr;gap:6px 8px;padding:9px 10px;font-size:13px}
 .pp-contact dt{color:#7a838c;margin:0}
 .pp-contact dd{margin:0;color:#414a53;overflow-wrap:anywhere}
@@ -430,8 +431,8 @@ a:hover{text-decoration:underline}
 .pp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:12px}
 .pp-section{padding:14px 15px}
 .pp-section--wide{margin-bottom:12px}
-.pp-section h2{font-size:17px;margin:0;color:#343e47}
-.pp-section h3{font-size:15px;margin:18px 0 7px}
+.pp-section :is(h2,.pp-text-h2){font-size:17px;margin:0;color:#343e47}
+.pp-section :is(h3,.pp-text-h3){font-size:15px;margin:18px 0 7px}
 .pp-acc-trigger{appearance:none;border:0;background:transparent;padding:0;margin:0;width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;color:#343e47;font:inherit;font-size:17px;font-weight:700;cursor:default}
 .pp-acc-icon{display:none;flex:0 0 auto;width:24px;height:24px;border:1px solid #d9e1e7;border-radius:50%;align-items:center;justify-content:center;color:var(--zn-blue);font-size:17px;font-weight:400}
 .pp-acc-panel{margin-top:11px}
@@ -488,7 +489,7 @@ a:hover{text-decoration:underline}
 /* Отзывы пользователей */
 .pp-reviews-section{margin-bottom:12px}
 .pp-reviews-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:12px}
-.pp-reviews-title h2{margin:0 0 3px;font-size:17px;color:#343e47}
+.pp-reviews-title :is(h2,.pp-text-h2){margin:0 0 3px;font-size:17px;color:#343e47}
 .pp-reviews-title p{margin:0;color:#7a838c;font-size:13px}
 .pp-rating-summary{display:flex;align-items:center;gap:9px;white-space:nowrap}
 .pp-rating-score{font-size:23px;font-weight:700;line-height:1;color:#343e47}
@@ -561,7 +562,7 @@ a:hover{text-decoration:underline}
   .pp-hero-side{padding:14px;border-left:0;border-top:1px solid var(--zn-line)}
   .pp-brandrow{gap:11px;align-items:center}
   .pp-logo{width:72px;height:72px;flex-basis:72px;font-size:23px}
-  .pp-brand h1{font-size:23px}
+  .pp-brand :is(h1,.pp-text-h1){font-size:23px}
   .pp-meta{font-size:13px;margin-bottom:4px}
   .pp-lead{font-size:13px;line-height:1.45}
   .pp-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:13px}
@@ -594,7 +595,7 @@ a:hover{text-decoration:underline}
   .pp-traffic-extra{display:none}
   .pp-traffic.pp-show-all .pp-traffic-extra{display:grid}
   .pp-traffic-toggle{display:block}
-  .pp-editorial h3{font-size:15px;margin-top:20px}
+  .pp-editorial :is(h3,.pp-text-h3){font-size:15px;margin-top:20px}
   .pp-editorial p{font-size:13px;line-height:1.6}
   .pp-shot{height:180px;margin:11px 0 18px;width:100%}
   .pp-step{font-size:13px;line-height:1.5}
@@ -621,7 +622,7 @@ a:hover{text-decoration:underline}
   .pp-hero-main,.pp-hero-side{padding:12px}
   .pp-brandrow{align-items:flex-start}
   .pp-logo{width:62px;height:62px;flex-basis:62px;font-size:20px}
-  .pp-brand h1{font-size:21px}
+  .pp-brand :is(h1,.pp-text-h1){font-size:21px}
   .pp-stats{gap:6px}
   .pp-stat{padding:8px 7px;min-height:69px}
   .pp-stat__ico{display:none}
@@ -639,7 +640,7 @@ a:hover{text-decoration:underline}
 .pp-payout-strip>b{display:block;color:#3d4851;margin-bottom:2px}
 .pp-payout-strip strong{color:#2d3942}
 .pp-contactbox{border:1px solid var(--zn-line);margin-top:10px}
-.pp-contactbox h3{font-size:13px;margin:0;padding:8px 9px;background:#fafbfc;border-bottom:1px solid var(--zn-line2)}
+.pp-contactbox :is(h3,.pp-text-h3){font-size:13px;margin:0;padding:8px 9px;background:#fafbfc;border-bottom:1px solid var(--zn-line2)}
 .pp-contactcols{display:grid;grid-template-columns:minmax(0,1fr) 112px}
 .pp-contactlist{padding:7px 8px;border-right:1px solid var(--zn-line2)}
 .pp-contactrow{display:grid;grid-template-columns:22px minmax(0,1fr);gap:6px;align-items:start;padding:4px 0;font-size:13px}
@@ -680,7 +681,7 @@ a:hover{text-decoration:underline}
   .pp-hero-main,.pp-hero-side{padding:7px}
   .pp-brandrow{gap:7px}
   .pp-logo{width:56px;height:56px;flex-basis:56px;font-size:18px}
-  .pp-brand h1{font-size:20px;margin-bottom:2px}
+  .pp-brand :is(h1,.pp-text-h1){font-size:20px;margin-bottom:2px}
   .pp-meta{font-size:13px;margin-bottom:3px}
   .pp-added,.pp-founded{font-size:13px}
   .pp-hero-facts{margin-top:7px;padding:7px 0;gap:3px 7px;font-size:13px}
@@ -688,7 +689,7 @@ a:hover{text-decoration:underline}
   .pp-payout-strip{padding-top:7px;font-size:13px}
   .pp-cta{margin-bottom:6px;padding:10px 7px;font-size:13px}
   .pp-contactbox{margin-top:5px}
-  .pp-contactbox h3{padding:6px 7px;font-size:13px}
+  .pp-contactbox :is(h3,.pp-text-h3){padding:6px 7px;font-size:13px}
   .pp-contactcols{grid-template-columns:minmax(0,1fr) 86px}
   .pp-contactlist,.pp-socialcol{padding:5px}
   .pp-contactrow{grid-template-columns:18px minmax(0,1fr);gap:4px;padding:3px 0;font-size:13px}
@@ -716,14 +717,14 @@ a:hover{text-decoration:underline}
   .pp-feature{padding:5px;font-size:13px;min-height:30px}
 
   .pp-editorial p{font-size:13px;line-height:1.45;margin-bottom:6px}
-  .pp-editorial h3{font-size:13px;margin:12px 0 4px}
+  .pp-editorial :is(h3,.pp-text-h3){font-size:13px;margin:12px 0 4px}
   .pp-editorial .pp-shot,.pp-editorial img.pp-zoomable{width:calc(100% + 14px);margin-left:-7px;margin-right:-7px}
   .pp-shot{height:150px;margin-top:6px;margin-bottom:8px}
   .pp-step{font-size:13px;padding-top:6px;padding-bottom:6px}
 
   .pp-reviews-section{padding:7px}
   .pp-reviews-head{margin-bottom:6px}
-  .pp-reviews-title h2{font-size:13px}
+  .pp-reviews-title :is(h2,.pp-text-h2){font-size:13px}
   .pp-rating-score{font-size:17px}
   .pp-review-list{gap:4px}
   .pp-review-card{padding:7px}
@@ -784,7 +785,7 @@ a:hover{text-decoration:underline}
 .pp-inline-form{display:none;background:#fff;border:1px solid var(--zn-line);padding:11px}
 .pp-inline-form.pp-open{display:block}
 .pp-inline-form__head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
-.pp-inline-form__head h3{font-size:13px;margin:0}
+.pp-inline-form__head :is(h3,.pp-text-h3){font-size:13px;margin:0}
 .pp-inline-form__close{border:0;background:transparent;color:#7b848d;font-size:22px;line-height:1;cursor:pointer}
 
 @media(max-width:720px){
@@ -842,8 +843,8 @@ a:hover{text-decoration:underline}
   .pp-mobile-stage .pp-accordion-section .pp-acc-trigger{cursor:default}
   .pp-mobile-stage .pp-accordion-section .pp-acc-icon{display:none}
   .pp-mobile-stage .pp-accordion-section .pp-acc-panel{display:block!important;margin:0;padding:7px;border-top:1px solid var(--zn-line2)}
-  .pp-mobile-stage .pp-accordion-section>h2{padding:8px 7px;margin:0}
-  .pp-mobile-stage .pp-accordion-section>h2 .pp-acc-trigger{padding:0;min-height:0}
+  .pp-mobile-stage .pp-accordion-section>:is(h2,.pp-text-h2){padding:8px 7px;margin:0}
+  .pp-mobile-stage .pp-accordion-section>:is(h2,.pp-text-h2) .pp-acc-trigger{padding:0;min-height:0}
   .pp-mobile-stage .pp-reviews-section{padding:8px 7px}
   .pp-review-tab-group{margin:0}
   .pp-similar-head{display:grid;grid-template-columns:minmax(0,1fr) 48px 36px 58px;gap:4px;padding:5px 6px;font-size:13px}
@@ -1215,7 +1216,7 @@ a:hover{text-decoration:underline}
 }
 
 /* Контакты */
-.pp-contactbox > h3{
+.pp-contactbox > :is(h3,.pp-text-h3){
   margin:0;
   padding:7px 8px;
   font-size:13px;
@@ -1297,6 +1298,30 @@ a:hover{text-decoration:underline}
   font-size:13px;
   font-weight:700;
 }
+
+/* Развёрнутый список не обрезается ограничениями высоты desktop. */
+.pp-country-section.pp-country-expanded{
+  height:auto !important;
+  overflow:visible !important;
+}
+.pp-country-section.pp-country-expanded .pp-country-list{
+  max-height:none !important;
+  overflow:visible !important;
+}
+.pp-country-more-button{
+  appearance:none;
+  border:0;
+  background:none;
+  padding:0;
+  color:var(--zn-blue);
+  cursor:pointer;
+  font:inherit;
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+.pp-country-more-button:hover{color:var(--zn-blue-dark)}
+.pp-country-more-button:focus-visible{outline:2px solid var(--zn-blue);outline-offset:3px}
 
 /* На desktop высота блока стран синхронизируется JS с соседним блоком трафика */
 @media(min-width:721px){
@@ -1543,13 +1568,20 @@ a:hover{text-decoration:underline}
   .zn-lang-switch a{min-width:27px;height:24px;padding:0 6px;font-size:13px}
   .zn-auth{display:none}
 }
+
+/* Флаги стран: на десктопе SVG, на мобильных — прежние эмодзи. */
+.pp-flag-image{display:none;width:19px;height:14px;object-fit:cover;vertical-align:-2px;margin-right:5px;border:1px solid rgba(0,0,0,.09);border-radius:2px}
+@media (min-width:721px){
+  .pp-flag-ready .pp-flag-image{display:inline-block}
+  .pp-flag-ready .pp-flag-emoji{display:none}
+}
 </style>
 <style>
 /* Новые элементы обзора */
 .pp-editorial .pp-gallery img.pp-zoomable{width:100%;max-width:100%;margin:0}
 .pp-hero-facts>span{display:inline}.pp-term{position:relative;display:inline-block;vertical-align:baseline}.pp-term-button{border:1px solid #b9cbd9;border-radius:50%;width:19px;height:19px;padding:0;background:#f1f7fb;color:#52738c;font:bold 12px Arial;cursor:pointer}.pp-term-button:focus-visible{outline:2px solid #1786c8;outline-offset:3px}.pp-term-tip{display:none;position:fixed;z-index:100000;width:290px;max-width:calc(100vw - 24px);padding:12px 14px;background:#20394d;color:#fff;font:normal 13px/1.6 Arial;border-radius:9px;box-shadow:0 8px 30px #15334b33;text-align:left}.pp-term.pp-tip-open .pp-term-tip{display:block}
 .pp-cta-domain{display:block;margin:8px -10px -13px;padding:8px 10px;background:#f3f5f7;color:#78838c;font-size:13px;font-weight:400;letter-spacing:0;text-transform:none;overflow-wrap:anywhere;border-radius:0 0 3px 3px}.pp-representative{display:block;text-align:center;font-size:13px;margin:0 0 14px;text-decoration:underline}
-.pp-toc{border:1px solid #dbe8f1;background:#f7fbfe;border-radius:8px;margin:0 0 22px;padding:0 16px}.pp-toc summary,.pp-faq summary{cursor:pointer;padding:14px 0;font-weight:700;color:#294c67}.pp-toc ol{display:grid;grid-template-columns:1fr 1fr;gap:8px 28px;padding:0 0 8px 20px}.pp-toc a{font-size:13px}.pp-editorial [id]{scroll-margin-top:24px}.pp-content-block{margin-top:30px}.pp-content-block h3{margin-bottom:16px}.pp-demo-note{color:#7a8793;font-size:13px}.pp-use-grid,.pp-balance-grid,.pp-video-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.pp-use-card{display:flex;gap:14px;padding:18px;background:#f8fbfd;border:1px solid #e0eaf1;border-radius:10px}.pp-use-number{display:flex;align-items:center;justify-content:center;flex:0 0 36px;height:36px;border-radius:10px;background:#e4f1fc;color:#167bb9;font-size:20px;font-weight:700}.pp-editorial .pp-use-card h4,.pp-editorial .pp-balance h4{margin:0 0 8px;font-size:15px}.pp-use-card p{margin:0;font-size:13px;line-height:1.7;color:#61717e}.pp-balance{border:1px solid;border-radius:10px;padding:20px}.pp-balance--plus{background:#f2fbf7;border-color:#cbe8da}.pp-balance--plus h4{color:#268461}.pp-balance--minus{background:#fff8f3;border-color:#efddce}.pp-balance--minus h4{color:#a5653b}.pp-balance ul{margin-bottom:0;padding-left:19px;font-size:13px}.pp-balance li{margin:9px 0}.pp-expert-card{display:flex;gap:20px;margin:0;padding:24px;background:linear-gradient(120deg,#edf5fc,#f8fbfd);border:1px solid #d7e7f3;border-left:4px solid #1786c8;border-radius:10px}.pp-expert-card img{width:80px;height:80px;object-fit:cover;border-radius:50%;flex:0 0 80px}.pp-expert-card small{display:block;color:#7c8c98;font-size:13px;margin-top:4px}.pp-expert-card blockquote{margin:16px 0 0;font-size:16px;line-height:1.8;color:#3f596c}.pp-video-poster{position:relative;display:block;width:100%;padding:0;border:0;background:#112b47;border-radius:10px;overflow:hidden;cursor:pointer}.pp-video-poster img{display:block;width:100%;height:auto}.pp-video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#e44747;color:#fff;border-radius:12px;padding:10px 21px;font-size:22px;box-shadow:0 3px 15px #0003}.pp-video-poster:hover .pp-video-play{background:#c92323}.pp-video-slot iframe{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:10px}.pp-video-status{font-size:13px;color:#788894;margin:7px 0}.pp-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.pp-gallery figure{margin:0}.pp-gallery-open{width:100%;padding:0;border:1px solid #d9e5ef;border-radius:8px;background:#f5f8fc;overflow:hidden;cursor:zoom-in}.pp-gallery img{display:block;width:100%;height:auto}.pp-gallery figcaption{font-size:13px;color:#73818d;margin-top:7px}.pp-faq details{border-bottom:1px solid #e3eaf0;padding:0 16px;background:#f9fbfd}.pp-faq details:first-child{border-radius:9px 9px 0 0}.pp-faq details:last-child{border-radius:0 0 9px 9px}.pp-faq p{padding-bottom:16px;margin-top:0;font-size:13px;color:#5f7180}.pp-author{display:flex;align-items:center;gap:12px;border-top:1px solid #e2e9ef;margin-top:28px;padding-top:18px}.pp-author-mark{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:#e4f1fc;color:#1786c8;font-weight:700}.pp-author small{display:block;font-size:13px;color:#84909b}.pp-author a{font-size:13px;font-weight:700}
+.pp-toc{border:1px solid #dbe8f1;background:#f7fbfe;border-radius:8px;margin:0 0 22px;padding:0 16px}.pp-toc summary,.pp-faq summary{cursor:pointer;padding:14px 0;font-weight:700;color:#294c67}.pp-toc ol{display:grid;grid-template-columns:1fr 1fr;gap:8px 28px;padding:0 0 8px 20px}.pp-toc a{font-size:13px}.pp-editorial [id]{scroll-margin-top:24px}.pp-content-block{margin-top:30px}.pp-content-block :is(h3,.pp-text-h3){margin-bottom:16px}.pp-demo-note{color:#7a8793;font-size:13px}.pp-use-grid,.pp-balance-grid,.pp-video-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.pp-use-card{display:flex;gap:14px;padding:18px;background:#f8fbfd;border:1px solid #e0eaf1;border-radius:10px}.pp-use-number{display:flex;align-items:center;justify-content:center;flex:0 0 36px;height:36px;border-radius:10px;background:#e4f1fc;color:#167bb9;font-size:20px;font-weight:700}.pp-editorial .pp-use-card h4,.pp-editorial .pp-balance h4{margin:0 0 8px;font-size:15px}.pp-use-card p{margin:0;font-size:13px;line-height:1.7;color:#61717e}.pp-balance{border:1px solid;border-radius:10px;padding:20px}.pp-balance--plus{background:#f2fbf7;border-color:#cbe8da}.pp-balance--plus h4{color:#268461}.pp-balance--minus{background:#fff8f3;border-color:#efddce}.pp-balance--minus h4{color:#a5653b}.pp-balance ul{margin-bottom:0;padding-left:19px;font-size:13px}.pp-balance li{margin:9px 0}.pp-expert-card{display:flex;gap:20px;margin:0;padding:24px;background:linear-gradient(120deg,#edf5fc,#f8fbfd);border:1px solid #d7e7f3;border-left:4px solid #1786c8;border-radius:10px}.pp-expert-card img{width:80px;height:80px;object-fit:cover;border-radius:50%;flex:0 0 80px}.pp-expert-card small{display:block;color:#7c8c98;font-size:13px;margin-top:4px}.pp-expert-card blockquote{margin:16px 0 0;font-size:16px;line-height:1.8;color:#3f596c}.pp-video-poster{position:relative;display:block;width:100%;padding:0;border:0;background:#112b47;border-radius:10px;overflow:hidden;cursor:pointer}.pp-video-poster img{display:block;width:100%;height:auto}.pp-video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#e44747;color:#fff;border-radius:12px;padding:10px 21px;font-size:22px;box-shadow:0 3px 15px #0003}.pp-video-poster:hover .pp-video-play{background:#c92323}.pp-video-slot iframe{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:10px}.pp-video-status{font-size:13px;color:#788894;margin:7px 0}.pp-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.pp-gallery figure{margin:0}.pp-gallery-open{width:100%;padding:0;border:1px solid #d9e5ef;border-radius:8px;background:#f5f8fc;overflow:hidden;cursor:zoom-in}.pp-gallery img{display:block;width:100%;height:auto}.pp-gallery figcaption{font-size:13px;color:#73818d;margin-top:7px}.pp-faq details{border-bottom:1px solid #e3eaf0;padding:0 16px;background:#f9fbfd}.pp-faq details:first-child{border-radius:9px 9px 0 0}.pp-faq details:last-child{border-radius:0 0 9px 9px}.pp-faq p{padding-bottom:16px;margin-top:0;font-size:13px;color:#5f7180}.pp-author{display:flex;align-items:center;gap:12px;border-top:1px solid #e2e9ef;margin-top:28px;padding-top:18px}.pp-author-mark{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:#e4f1fc;color:#1786c8;font-weight:700}.pp-author small{display:block;font-size:13px;color:#84909b}.pp-author a{font-size:13px;font-weight:700}
 @media(max-width:720px){.pp-toc ol,.pp-use-grid,.pp-balance-grid,.pp-video-grid{grid-template-columns:1fr}.pp-gallery{grid-template-columns:1fr}.pp-expert-card{padding:16px;gap:12px;flex-wrap:wrap}.pp-expert-card blockquote{font-size:14px}}
 </style>
 <style>
@@ -1559,7 +1591,7 @@ a:hover{text-decoration:underline}
 /* Читаемый текст и горизонтальные ленты */
 .pp-term-button{width:14px;height:14px;font-size:9px;line-height:12px;vertical-align:1px;position:relative}.pp-term-button::after{content:"";position:absolute;inset:-5px}.pp-hero-facts{line-height:1.8}.pp-editorial p,.pp-editorial li{font-size:15px;line-height:1.75}.pp-demo-note,.pp-inline-shot figcaption,.pp-gallery figcaption,.pp-video-status,.pp-author small{font-size:13px;line-height:1.6}.pp-author a{font-size:15px}.pp-author-avatar{display:block;width:48px;height:48px;border-radius:50%;object-fit:cover;flex:0 0 48px}.pp-representative,.pp-cta-domain{font-size:14px}.pp-contactlist,.pp-contactlist a,.pp-manager-name{font-size:13px;line-height:1.5}.pp-contactpromo{font-size:13px!important;line-height:1.5}.pp-payments-table{font-size:13px}.pp-use-card p,.pp-faq p{font-size:14px}.pp-contactcols,.pp-hero-main,.pp-hero-side{min-width:0}.pp-video-grid,.pp-gallery{display:flex;gap:14px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;max-width:100%;padding:2px 0 8px}.pp-video-grid::-webkit-scrollbar,.pp-gallery::-webkit-scrollbar{display:none;width:0;height:0}.pp-video-grid>.pp-video-slot{flex:0 0 46%;min-width:0;scroll-snap-align:start}.pp-gallery>figure{flex:0 0 46%;min-width:0;scroll-snap-align:start;margin:0}.pp-carousel-controls{display:flex;justify-content:flex-end;gap:8px;margin:0 0 9px}.pp-carousel-controls button{display:grid;place-items:center;width:36px;height:32px;padding:0;background:#f1f7fc;border:1px solid #c8dfeE;border-radius:6px;color:#2475a3;font-size:18px;cursor:pointer}.pp-carousel-controls button:hover{background:#e0eff9}.pp-video-grid:focus-visible,.pp-gallery:focus-visible{outline:2px solid #1786c8;outline-offset:3px}.pp-editorial .pp-video-poster img{width:100%;height:auto;margin:0}.pp-gallery figcaption{padding:0 6px}
 @media(max-width:720px){
-.zn-page{padding-left:0!important;padding-right:0!important}.pp-wrap{min-width:0}#pp-overview.pp-section{padding:10px 6px!important;border-left:0;border-right:0}.pp-editorial{margin:0;padding:0;min-width:0}.pp-editorial p,.pp-editorial li{font-size:15px;line-height:1.75}.pp-editorial h3{font-size:17px;margin-top:22px}.pp-inline-shot{margin-left:-6px;margin-right:-6px;width:calc(100% + 12px)}.pp-inline-shot .pp-gallery-open{border-left:0;border-right:0;border-radius:0}.pp-editorial .pp-inline-shot img.pp-zoomable{width:100%;max-width:100%;margin:0;display:block}.pp-inline-shot figcaption{padding:0 6px}.pp-gallery{margin-left:-6px;margin-right:-6px;width:calc(100% + 12px);max-width:none;gap:12px}.pp-gallery>figure{flex-basis:88%;scroll-snap-align:start}.pp-gallery .pp-gallery-open{border-radius:0;border-left:0;border-right:0}.pp-video-grid>.pp-video-slot{flex-basis:88%}.pp-use-card,.pp-balance{padding:14px}.pp-faq details{padding:0 9px}.pp-toc{padding:0 10px}.pp-toc a{font-size:14px}.pp-static-title{font-size:16px}.pp-author{padding-left:4px}.pp-similar-link{grid-template-columns:minmax(0,1fr) 54px 40px 62px;column-gap:3px}.pp-similar-link>span{overflow-wrap:anywhere}
+.zn-page{padding-left:0!important;padding-right:0!important}.pp-wrap{min-width:0}#pp-overview.pp-section{padding:10px 6px!important;border-left:0;border-right:0}.pp-editorial{margin:0;padding:0;min-width:0}.pp-editorial p,.pp-editorial li{font-size:15px;line-height:1.75}.pp-editorial :is(h3,.pp-text-h3){font-size:17px;margin-top:22px}.pp-inline-shot{margin-left:-6px;margin-right:-6px;width:calc(100% + 12px)}.pp-inline-shot .pp-gallery-open{border-left:0;border-right:0;border-radius:0}.pp-editorial .pp-inline-shot img.pp-zoomable{width:100%;max-width:100%;margin:0;display:block}.pp-inline-shot figcaption{padding:0 6px}.pp-gallery{margin-left:-6px;margin-right:-6px;width:calc(100% + 12px);max-width:none;gap:12px}.pp-gallery>figure{flex-basis:88%;scroll-snap-align:start}.pp-gallery .pp-gallery-open{border-radius:0;border-left:0;border-right:0}.pp-video-grid>.pp-video-slot{flex-basis:88%}.pp-use-card,.pp-balance{padding:14px}.pp-faq details{padding:0 9px}.pp-toc{padding:0 10px}.pp-toc a{font-size:14px}.pp-static-title{font-size:16px}.pp-author{padding-left:4px}.pp-similar-link{grid-template-columns:minmax(0,1fr) 54px 40px 62px;column-gap:3px}.pp-similar-link>span{overflow-wrap:anywhere}
 }
 </style>
 <style>
@@ -1578,6 +1610,26 @@ a:hover{text-decoration:underline}
 .pp-author a:focus-visible{outline:2px solid #1786c8;outline-offset:3px}
 </style>
 <style>.pp-author small .pp-author-label{font-size:inherit;font-weight:400;color:inherit}</style>
+<style>
+/* Свободные крошки, компактные статусы и переход к отзыву. */
+.pp-breadcrumbs{gap:6px!important}
+.pp-breadcrumbs .pp-bc-sep{flex:0 0 auto;color:#b4bac0}
+.pp-calendar-icon{vertical-align:-3px;margin-right:4px}
+.pp-traffic-status{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;font-size:19px;line-height:1}
+.pp-traffic-status.pp-ok{color:#23975b}
+.pp-traffic-status.pp-no{color:#d54444}
+.pp-traffic-status.pp-warn{color:#bd8a00}
+.pp-add-review{display:block;text-align:center;font:inherit;font-weight:700;color:var(--zn-blue);text-decoration:underline;text-underline-offset:3px;margin:0 0 12px;padding:7px 10px}
+.pp-add-review:focus-visible{outline:2px solid #1786c8;outline-offset:2px}
+#pp-review-form{scroll-margin-top:16px}
+@media(min-width:721px){
+ .pp-inline-shot{width:calc(100% + 30px);max-width:none;margin-left:-15px;margin-right:-15px}
+ .pp-inline-shot .pp-gallery-open{max-width:none;border-left:0;border-right:0;border-radius:0}
+ .pp-gallery{width:calc(100% + 30px);max-width:none;margin-left:-15px;margin-right:-15px}
+ .pp-gallery .pp-gallery-open{border-left:0;border-right:0;border-radius:0}
+ .pp-inline-shot figcaption,.pp-gallery figcaption{padding-left:15px;padding-right:15px}
+}
+</style>
 </head>
 <body class="pp-demo-page">
 <header class="zn-topbar">
@@ -1626,7 +1678,7 @@ a:hover{text-decoration:underline}
 <span aria-hidden="true">•</span>
 <a class="pp-meta-link" href="/load/partners/vertical/betting/">Betting</a>
 </div>
-<p class="pp-addedline">Добавлено: <time datetime="2026-08-19">19.08.2026</time> · 👤 <a href="https://zornet.ru/" rel="author">@zornet</a></p>
+<p class="pp-addedline"><svg class="pp-calendar-icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg> <time datetime="2026-08-19">19.08.2026</time> · 👤 <a href="https://zornet.ru/" rel="author">@zornet</a></p>
 </div>
 </div>
 <div aria-label="Ключевые условия" class="pp-hero-facts"><span><strong>450+</strong> <span class="pp-term"><button type="button" class="pp-term-button" aria-label="Что такое Оффер" aria-describedby="pp-term-0" aria-expanded="false">офферов</button><span class="pp-term-tip" role="tooltip" id="pp-term-0">Оффер — предложение рекламодателя с условиями, целевым действием и вознаграждением за его выполнение.</span></span></span> · <span><strong>60+</strong> доступных <span class="pp-term"><button type="button" class="pp-term-button" aria-label="Что такое GEO" aria-describedby="pp-term-1" aria-expanded="false">GEO</button><span class="pp-term-tip" role="tooltip" id="pp-term-1">GEO — страна или регион аудитории. Для каждого оффера действует свой список разрешённых территорий.</span></span></span> · <span><span class="pp-term"><button type="button" class="pp-term-button" aria-label="Что такое CPA" aria-describedby="pp-term-2" aria-expanded="false">CPA</button><span class="pp-term-tip" role="tooltip" id="pp-term-2">CPA — модель оплаты за согласованное действие пользователя, например регистрацию или депозит. Ставка зависит от условий оффера.</span></span> <strong>до $250</strong></span> · <span><span class="pp-term"><button type="button" class="pp-term-button" aria-label="Что такое RevShare" aria-describedby="pp-term-3" aria-expanded="false">RevShare</button><span class="pp-term-tip" role="tooltip" id="pp-term-3">RevShare — доля дохода рекламодателя от привлечённых пользователей. База расчёта и вычеты определяются условиями программы.</span></span> <strong>40%</strong></span> · <span><span class="pp-term"><button type="button" class="pp-term-button" aria-label="Что такое Hybrid" aria-describedby="pp-term-4" aria-expanded="false">Hybrid</button><span class="pp-term-tip" role="tooltip" id="pp-term-4">Hybrid — сочетание фиксированной выплаты по CPA и доли дохода по RevShare. Пропорции согласовываются с программой.</span></span> по согласованию</span>.</div>
@@ -1635,11 +1687,12 @@ a:hover{text-decoration:underline}
 </div>
 <aside class="pp-hero-side">
 <a class="pp-cta" href="https://demopartners.com" rel="nofollow sponsored"><span>Официальный сайт партнерской программы ↗</span><small class="pp-cta-domain">demopartners.com</small></a>
+<a class="pp-add-review" href="#pp-review-form">Добавить отзыв</a>
 <!-- Замените URL сайта и адрес формы связи перед публикацией. -->
-<a class="pp-representative" href="/index/0-3?subject=DemoPartners">Вы представитель сервиса?</a>
+<a class="pp-representative" href="/index/0-3?subject=DemoPartners">Вы представитель партнерки?</a>
 <div class="pp-mobile-stage">
 <div class="pp-contactbox" id="pp-contacts">
-<h3>Контакты</h3>
+<div class="pp-text-heading pp-text-h3">Контакты</div>
 <div class="pp-contactcols">
 <div aria-label="Контакты менеджеров" class="pp-managers">
 <section class="pp-manager-card">
@@ -1678,7 +1731,7 @@ a:hover{text-decoration:underline}
 <section class="pp-section pp-accordion-section pp-country-section" data-country-section="">
 <meta content="Доступные и запрещенные страны DemoPartners"/>
 <div class="pp-country-head">
-<h2 class="pp-static-title"><span class="pp-title-inline">Страны</span></h2>
+<div class="pp-static-title pp-text-heading pp-text-h2"><span class="pp-title-inline">Страны</span></div>
 <div aria-label="Статус стран" class="pp-country-tabs" role="tablist">
 <button aria-selected="true" class="pp-country-tab pp-active" data-country-tab="allowed" role="tab" type="button">41 разрешена</button>
 <button aria-selected="false" class="pp-country-tab" data-country-tab="blocked" role="tab" type="button">3 запрещены</button>
@@ -1743,23 +1796,23 @@ a:hover{text-decoration:underline}
 </section>
 <section class="pp-section pp-accordion-section">
 <meta content="Источники трафика DemoPartners"/>
-<h2 class="pp-static-title"><span class="pp-title-inline">Источники трафика <small>5 разрешено, 3 запрещено</small></span></h2>
+<div class="pp-static-title pp-text-heading pp-text-h2"><span class="pp-title-inline">Источники трафика <small>5 разрешено, 3 запрещено</small></span></div>
 <div class="pp-acc-panel">
 <ul class="pp-traffic" data-pp-traffic="">
-<li><a class="pp-value-link" href="/load/partners/traffic/seo/">SEO</a><span class="pp-status pp-ok">● Разрешено</span></li>
-<li><a class="pp-value-link" href="/load/partners/traffic/facebook-ads/">Facebook Ads</a><span class="pp-status pp-ok">● Разрешено</span></li>
-<li><a class="pp-value-link" href="/load/partners/traffic/tiktok-ads/">TikTok Ads</a><span class="pp-status pp-ok">● Разрешено</span></li>
-<li><a class="pp-value-link" href="/load/partners/traffic/google-ads/">Google Ads</a><span class="pp-status pp-ok">● Разрешено</span></li>
-<li><a class="pp-value-link" href="/load/partners/traffic/influencers/">Инфлюенсеры</a><span class="pp-status pp-ok">● Разрешено</span></li>
-<li class="pp-traffic-extra"><a class="pp-value-link" href="/load/partners/traffic/email/">Email</a><span class="pp-status pp-warn">▲ По согласованию</span></li>
-<li class="pp-traffic-extra"><a class="pp-value-link" href="/load/partners/traffic/motivated/">Motivated</a><span class="pp-status pp-no">× Запрещено</span></li>
-<li class="pp-traffic-extra"><a class="pp-value-link" href="/load/partners/traffic/incentive/">Incentive</a><span class="pp-status pp-no">× Запрещено</span></li>
-<li class="pp-traffic-extra"><a class="pp-value-link" href="/load/partners/traffic/brand-bidding/">Brand bidding</a><span class="pp-status pp-no">× Запрещено</span></li>
+<li><a class="pp-value-link" href="/load/partners/traffic/seo/">SEO</a><span class="pp-status pp-ok pp-traffic-status" role="img" aria-label="Разрешено" title="Разрешено"><span aria-hidden="true">✓</span></span></li>
+<li><a class="pp-value-link" href="/load/partners/traffic/facebook-ads/">Facebook Ads</a><span class="pp-status pp-ok pp-traffic-status" role="img" aria-label="Разрешено" title="Разрешено"><span aria-hidden="true">✓</span></span></li>
+<li><a class="pp-value-link" href="/load/partners/traffic/tiktok-ads/">TikTok Ads</a><span class="pp-status pp-ok pp-traffic-status" role="img" aria-label="Разрешено" title="Разрешено"><span aria-hidden="true">✓</span></span></li>
+<li><a class="pp-value-link" href="/load/partners/traffic/google-ads/">Google Ads</a><span class="pp-status pp-ok pp-traffic-status" role="img" aria-label="Разрешено" title="Разрешено"><span aria-hidden="true">✓</span></span></li>
+<li><a class="pp-value-link" href="/load/partners/traffic/influencers/">Инфлюенсеры</a><span class="pp-status pp-ok pp-traffic-status" role="img" aria-label="Разрешено" title="Разрешено"><span aria-hidden="true">✓</span></span></li>
+<li class="pp-traffic-extra"><a class="pp-value-link" href="/load/partners/traffic/email/">Email</a><span class="pp-status pp-warn pp-traffic-status" role="img" aria-label="По согласованию" title="По согласованию"><span aria-hidden="true">?</span></span></li>
+<li class="pp-traffic-extra"><a class="pp-value-link" href="/load/partners/traffic/motivated/">Motivated</a><span class="pp-status pp-no pp-traffic-status" role="img" aria-label="Запрещено" title="Запрещено"><span aria-hidden="true">✕</span></span></li>
+<li class="pp-traffic-extra"><a class="pp-value-link" href="/load/partners/traffic/incentive/">Incentive</a><span class="pp-status pp-no pp-traffic-status" role="img" aria-label="Запрещено" title="Запрещено"><span aria-hidden="true">✕</span></span></li>
+<li class="pp-traffic-extra"><a class="pp-value-link" href="/load/partners/traffic/brand-bidding/">Brand bidding</a><span class="pp-status pp-no pp-traffic-status" role="img" aria-label="Запрещено" title="Запрещено"><span aria-hidden="true">✕</span></span></li>
 </ul>
 </div>
 </section>
 <section class="pp-section pp-accordion-section" id="pp-payments">
-<h2 class="pp-static-title"><span class="pp-title-inline">Выплаты <small>7 платежных систем</small></span></h2>
+<div class="pp-static-title pp-text-heading pp-text-h2"><span class="pp-title-inline">Выплаты <small>7 платежных систем</small></span></div>
 <div class="pp-acc-panel">
 <table class="pp-table pp-payments-table">
 <tr><th>Метод</th><td><b>Минимум</b></td><td><b>Валюта</b></td></tr>
@@ -1774,7 +1827,7 @@ a:hover{text-decoration:underline}
 </div>
 </section>
 <section class="pp-section pp-accordion-section">
-<h2 class="pp-static-title"><span>Дополнительные возможности</span></h2>
+<div class="pp-static-title pp-text-heading pp-text-h2"><span>Дополнительные возможности</span></div>
 <div class="pp-acc-panel">
 <ul class="pp-features"><li><a href="/load/partners/features/smartlink/">Smartlink</a></li><li><a href="/load/partners/features/api/">API</a></li><li><a href="/load/partners/features/postback/">Postback</a></li><li><a href="/load/partners/features/deeplink/">Deeplink</a></li><li><a href="/load/partners/features/promo-materials/">Промоматериалы</a></li><li><a href="/load/partners/features/exclusive-offers/">Эксклюзивные офферы</a></li><li><a href="/load/partners/features/own-offers/">Собственные офферы</a></li><li><a href="/load/partners/features/referral-program/">Реферальная программа</a></li></ul>
 </div>
@@ -1825,7 +1878,7 @@ a:hover{text-decoration:underline}
 <div>
 </div>
 <div class="pp-reviews-head">
-<div class="pp-reviews-title"><h2>12 отзывов о DemoPartners</h2></div>
+<div class="pp-reviews-title"><div class="pp-text-heading pp-text-h2">12 отзывов о DemoPartners</div></div>
 <div aria-label="Средняя оценка 4,7 из 5" class="pp-rating-summary">
 <div class="pp-rating-score">4,7</div>
 <div class="pp-stars">★★★★★</div>
@@ -1869,8 +1922,8 @@ a:hover{text-decoration:underline}
 <button aria-expanded="false" class="pp-review-action" data-review-form="video" type="button">▶ Видеоотзыв</button>
 </div>
 <div aria-live="polite" class="pp-inline-forms">
-<section class="pp-inline-form" data-review-panel="review">
-<header class="pp-inline-form__head"><h3>Оставить отзыв</h3><button aria-label="Закрыть" class="pp-inline-form__close" type="button">×</button></header>
+<section class="pp-inline-form" data-review-panel="review" id="pp-review-form">
+<header class="pp-inline-form__head"><div class="pp-text-heading pp-text-h3">Оставить отзыв</div><button aria-label="Закрыть" class="pp-inline-form__close" type="button">×</button></header>
 <form action="#" class="pp-form" data-pp-demo-form="review" method="post">
 <div class="pp-form-row"><div class="pp-field"><label for="pp-review-name">Имя или ник *</label><input id="pp-review-name" name="name" required="" type="text"/></div><div class="pp-field"><label for="pp-review-email">Email *</label><input id="pp-review-email" name="email" required="" type="email"/></div></div>
 <div class="pp-form-row"><div class="pp-field"><label for="pp-review-rating">Оценка *</label><select id="pp-review-rating" name="rating" required=""><option value="">Выберите</option><option value="5">5 — отлично</option><option value="4">4 — хорошо</option><option value="3">3 — нормально</option><option value="2">2 — плохо</option><option value="1">1 — очень плохо</option></select></div><div class="pp-field"><label for="pp-review-period">Срок работы</label><input id="pp-review-period" name="period" placeholder="Например: 8 месяцев" type="text"/></div></div>
@@ -1881,7 +1934,7 @@ a:hover{text-decoration:underline}
 </form>
 </section>
 <section class="pp-inline-form" data-review-panel="video">
-<header class="pp-inline-form__head"><h3>Добавить видеоотзыв</h3><button aria-label="Закрыть" class="pp-inline-form__close" type="button">×</button></header>
+<header class="pp-inline-form__head"><div class="pp-text-heading pp-text-h3">Добавить видеоотзыв</div><button aria-label="Закрыть" class="pp-inline-form__close" type="button">×</button></header>
 <p class="pp-video-tip">Загрузите видео на YouTube, VK Видео или Rutube и укажите публичную ссылку.</p>
 <form action="#" class="pp-form" data-pp-demo-form="video-review" method="post">
 <div class="pp-form-row"><div class="pp-field"><label for="pp-video-name">Имя или ник *</label><input id="pp-video-name" name="name" required="" type="text"/></div><div class="pp-field"><label for="pp-video-email">Email *</label><input id="pp-video-email" name="email" required="" type="email"/></div></div>
@@ -1894,7 +1947,7 @@ a:hover{text-decoration:underline}
 </div>
 </div><!-- /.pp-review-tab-group -->
 <section class="pp-section pp-accordion-section pp-section--wide" id="pp-similar">
-<h2 class="pp-static-title"><span>3 похожие партнерские программы Gamble&amp;Betting, GEO: Latam, Европа</span></h2>
+<div class="pp-static-title pp-text-heading pp-text-h2"><span>3 похожие партнерские программы Gamble&amp;Betting, GEO: Latam, Европа</span></div>
 <div class="pp-acc-panel">
 <div aria-hidden="true" class="pp-similar-head"><span>Программа</span><span>Офферы</span><span>GEO</span><span>Мин. выплата</span></div>
 <ul class="pp-similar-list">
@@ -1996,6 +2049,29 @@ a:hover{text-decoration:underline}
     return active ? active.getAttribute('data-country-tab') : 'allowed';
   }
 
+  var expandedCountries={allowed:false,blocked:false};
+
+  function renderCountryMore(more, visible, total, type){
+    if(!more) return;
+    if(expandedCountries[type]){
+      more.innerHTML='<button type="button" class="pp-country-more-button" aria-expanded="true">Свернуть страны</button>';
+    }else if(visible<total){
+      more.innerHTML='Показано '+visible+' из '+total+' · <button type="button" class="pp-country-more-button" aria-expanded="false">ещё '+(total-visible)+'</button>';
+    }else{
+      more.textContent='';
+    }
+  }
+
+  if(countrySection){
+    countrySection.addEventListener('click',function(event){
+      var button=event.target.closest('.pp-country-more-button');
+      if(!button || !countrySection.contains(button)) return;
+      var type=activeCountryType();
+      expandedCountries[type]=!expandedCountries[type];
+      fitCountryItems();
+    });
+  }
+
   function fitCountryItems(){
     if(!countrySection) return;
 
@@ -2006,6 +2082,13 @@ a:hover{text-decoration:underline}
 
     var items=[].slice.call(list.children);
     items.forEach(function(item){ item.hidden=false; });
+    countrySection.classList.toggle('pp-country-expanded',!!expandedCountries[type]);
+    if(expandedCountries[type]){
+      countrySection.style.height='auto';
+      list.style.maxHeight='none';
+      renderCountryMore(more,items.length,items.length,type);
+      return;
+    }
 
     var trafficList=root.querySelector('[data-pp-traffic]');
     var trafficSection=trafficList ? trafficList.closest('.pp-section') : null;
@@ -2031,11 +2114,7 @@ a:hover{text-decoration:underline}
         mobileHidden++;
       }
 
-      if(more){
-        more.textContent=mobileHidden>0
-          ? 'Показано '+(items.length-mobileHidden)+' из '+items.length+' · еще '+mobileHidden
-          : '';
-      }
+      renderCountryMore(more,items.length-mobileHidden,items.length,type);
       return;
     }
 
@@ -2049,13 +2128,9 @@ a:hover{text-decoration:underline}
         items.forEach(function(item,index){
           item.hidden=index>=6;
         });
-        if(more){
-          more.textContent=items.length>6
-            ? 'Показано 6 из '+items.length+' · еще '+(items.length-6)
-            : '';
-        }
+        renderCountryMore(more,Math.min(6,items.length),items.length,type);
       }else{
-        if(more) more.textContent='';
+        renderCountryMore(more,items.length,items.length,type);
       }
       return;
     }
@@ -2110,11 +2185,7 @@ a:hover{text-decoration:underline}
       hiddenCount++;
     }
 
-    if(more){
-      more.textContent=hiddenCount>0
-        ? 'Показано '+(items.length-hiddenCount)+' из '+items.length+' · еще '+hiddenCount
-        : '';
-    }
+    renderCountryMore(more,items.length-hiddenCount,items.length,type);
   }
 
   function switchCountryTab(type){
@@ -2245,6 +2316,102 @@ document.querySelectorAll('.pp-video-grid,.pp-gallery').forEach(track=>{
  window.addEventListener('pointerup',end);window.addEventListener('pointercancel',end);window.addEventListener('blur',end);
  track.addEventListener('click',e=>{if(dragged){e.preventDefault();e.stopImmediatePropagation();}},true);
 });
+})();
+</script>
+<script>
+/* Флаги отображаются сразу из встроенных SVG. При доступности FlagCDN
+   картинка автоматически заменяется официальным SVG без мигания. */
+(function(){
+  const H=(...c)=>c.map((color,i)=>`<rect y="${i*30/c.length}" width="40" height="${30/c.length+.1}" fill="${color}"/>`).join('');
+  const V=(...c)=>c.map((color,i)=>`<rect x="${i*40/c.length}" width="${40/c.length+.1}" height="30" fill="${color}"/>`).join('');
+  const R=(x,y,w,h,c)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${c}"/>`;
+  const P=(points,c)=>`<polygon points="${points}" fill="${c}"/>`;
+  const C=(x,y,r,c)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/>`;
+  const star=(x,y,r,c)=>P(Array.from({length:10},(_,i)=>{let a=-Math.PI/2+i*Math.PI/5;let q=i%2?r*.42:r;return `${x+Math.cos(a)*q},${y+Math.sin(a)*q}`}).join(' '),c);
+  const blue='#0759a8', red='#d52132', white='#fff', yellow='#ffce00', green='#16884a';
+  const flags={
+    br:()=>R(0,0,40,30,'#159447')+P('20,3 37,15 20,27 3,15','#ffdf00')+C(20,15,7,'#174c91')+`<path d="M13 13 Q20 10 27 15" stroke="white" stroke-width="1.4" fill="none"/>`,
+    mx:()=>V('#006847',white,'#ce1126')+C(20,15,2.6,'#9c8139'),
+    cl:()=>H(white,'#d52b1e')+R(0,0,15,15,'#0039a6')+star(7.5,7.5,4,white),
+    pe:()=>V('#d91023',white,'#d91023'),
+    pl:()=>H(white,'#dc143c'),
+    kz:()=>R(0,0,40,30,'#00a4d6')+C(20,13,5,'#ffcc33')+R(18,19,4,1,'#ffcc33'),
+    ar:()=>H('#74acdf',white,'#74acdf')+C(20,15,2.4,'#f4b328'),
+    co:()=>R(0,0,40,15,'#fcd116')+R(0,15,40,7.5,'#003893')+R(0,22.5,40,7.5,'#ce1126'),
+    ec:()=>flags.co()+C(20,17,2.5,'#786a3a'),
+    uy:()=>H(white,'#0038a8',white,'#0038a8',white,'#0038a8',white,'#0038a8',white)+R(0,0,16,14,white)+C(8,7,3,'#f8bf26'),
+    py:()=>H('#d52b1e',white,'#0038a8')+C(20,15,2,'#dcae3e'),
+    bo:()=>H('#d52b1e','#f9e300','#007934'),
+    cr:()=>R(0,0,40,5,'#002b7f')+R(0,5,40,5,white)+R(0,10,40,10,'#ce1126')+R(0,20,40,5,white)+R(0,25,40,5,'#002b7f'),
+    pa:()=>R(0,0,20,15,white)+R(20,0,20,15,'#da121a')+R(0,15,20,15,'#072357')+R(20,15,20,15,white)+star(10,7.5,5,'#072357')+star(30,22.5,5,'#da121a'),
+    do:()=>R(0,0,18,13,'#002d62')+R(22,0,18,13,'#ce1126')+R(0,17,18,13,'#ce1126')+R(22,17,18,13,'#002d62')+R(18,0,4,30,white)+R(0,13,40,4,white),
+    gt:()=>V('#4997d0',white,'#4997d0')+C(20,15,2.3,'#629246'),
+    hn:()=>H('#0073cf',white,'#0073cf')+[12,20,28].map(x=>star(x,15,1.8,'#0073cf')).join(''),
+    sv:()=>H('#0047ab',white,'#0047ab')+C(20,15,2,'#4a9958'),
+    ni:()=>H('#0067c6',white,'#0067c6')+P('20,11 24,18 16,18','#4eaa70'),
+    bz:()=>H('#004b9e','#ce1126','#004b9e')+R(0,4,40,22,'#004b9e')+C(20,15,8,white)+C(20,15,3,green),
+    cz:()=>H(white,'#d7141a')+P('0,0 20,15 0,30','#11457e'),
+    sk:()=>H(white,'#0b4ea2','#ee1c25')+R(10,10,6,10,'#ee1c25'),
+    hu:()=>H('#ce2939',white,'#477050'),
+    ro:()=>V('#002b7f','#fcd116','#ce1126'),
+    bg:()=>H(white,'#00966e','#d62612'),
+    hr:()=>H('#ff0000',white,'#171796')+R(18,11,5,8,'#df2525'),
+    rs:()=>H('#c6363c','#0c4076',white)+C(12,14,3,white),
+    si:()=>H(white,'#005da4','#ed1c24')+R(10,5,7,7,'#005da4'),
+    gr:()=>Array.from({length:9},(_,i)=>R(0,i*30/9,40,30/9+.1,i%2?'white':'#0d5eaf')).join('')+R(0,0,17,17,'#0d5eaf')+R(7,0,3,17,white)+R(0,7,17,3,white),
+    pt:()=>R(0,0,16,30,'#006600')+R(16,0,24,30,'#ff0000')+C(16,15,5,'#ffdb00'),
+    es:()=>R(0,0,40,7.5,'#aa151b')+R(0,7.5,40,15,'#f1bf00')+R(0,22.5,40,7.5,'#aa151b')+R(11,13,4,7,'#aa151b'),
+    it:()=>V('#009246',white,'#ce2b37'),
+    de:()=>H('#000', '#dd0000','#ffce00'),
+    at:()=>H('#ed2939',white,'#ed2939'),
+    lt:()=>H('#fdb913','#006a44','#c1272d'),
+    lv:()=>R(0,0,40,12,'#9e1b34')+R(0,12,40,6,white)+R(0,18,40,12,'#9e1b34'),
+    ee:()=>H('#4891d9','#000',white),
+    ua:()=>H('#0057b7','#ffd700'),
+    ge:()=>R(0,0,40,30,white)+R(17,0,6,30,'#e01d2d')+R(0,12,40,6,'#e01d2d'),
+    am:()=>H('#d90012','#0033a0','#f2a800'),
+    az:()=>H('#00b9e4','#ed2939','#3f9c35')+C(19,15,4,white)+C(21,14,4,'#ed2939')+star(25,15,2,white),
+    us:()=>Array.from({length:13},(_,i)=>R(0,i*30/13,40,30/13+.15,i%2?'white':'#b22234')).join('')+R(0,0,17,16,'#3c3b6e')+Array.from({length:4},(_,i)=>Array.from({length:5},(_,j)=>star(2+j*3.2,2+i*3.7,.9,white)).join('')).join(''),
+    gb:()=>R(0,0,40,30,'#012169')+`<path d="M0 0 L40 30 M40 0 L0 30" stroke="white" stroke-width="8"/>`+`<path d="M0 0 L40 30 M40 0 L0 30" stroke="#c8102e" stroke-width="3"/>`+R(0,11,40,8,white)+R(16,0,8,30,white)+R(0,13,40,4,'#c8102e')+R(18,0,4,30,'#c8102e'),
+    au:()=>R(0,0,40,30,'#012169')+star(29,19,5,white)+R(0,0,19,14,'#012169')+`<path d="M0 0 L19 14 M19 0 L0 14" stroke="white" stroke-width="3"/>`+R(0,5,19,4,white)+R(8,0,4,14,white)+R(0,6,19,2,'#c8102e')+R(9,0,2,14,'#c8102e')
+  };
+  function inlineFlag(code){
+    if(!flags[code])return null;
+    const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 30" width="40" height="30">${flags[code]()}</svg>`;
+    return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+  }
+  document.querySelectorAll('.pp-country-list a').forEach(function(link){
+    const node=Array.from(link.childNodes).find(n=>n.nodeType===3&&n.textContent.trim());
+    if(!node)return;
+    const match=node.textContent.match(/^\s*([\u{1F1E6}-\u{1F1FF}]{2})/u);
+    if(!match)return;
+    const code=Array.from(match[1]).map(ch=>String.fromCharCode(ch.codePointAt(0)-0x1F1E6+97)).join('');
+    const emoji=document.createElement('span');emoji.className='pp-flag-emoji';emoji.textContent=match[1]+' ';
+    node.textContent=node.textContent.slice(match[0].length).trimStart();link.insertBefore(emoji,node);
+    const fallback=inlineFlag(code);if(!fallback)return;
+    const img=document.createElement('img');img.className='pp-flag-image';img.alt='';img.width=19;img.height=14;img.src=fallback;
+    link.insertBefore(img,node);link.classList.add('pp-flag-ready');
+    const remote=new Image();remote.onload=function(){img.src=remote.src};remote.src='https://flagcdn.com/'+code+'.svg';
+  });
+})();
+</script>
+<script>
+(function(){
+ const link=document.querySelector('.pp-add-review');
+ const panel=document.getElementById('pp-review-form');
+ if(!link||!panel)return;
+ link.addEventListener('click',function(event){
+  event.preventDefault();
+  if(!panel.classList.contains('pp-open')){
+   const button=document.querySelector('[data-review-form="review"]');
+   if(button)button.click();
+  }
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  panel.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});
+  const input=panel.querySelector('input');
+  if(input)input.focus({preventScroll:true});
+  if(history.replaceState)history.replaceState(null,'','#pp-review-form');
+ });
 })();
 </script>
 </body>
